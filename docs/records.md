@@ -822,3 +822,204 @@ a duplicated profiling sentence. Generated artifacts, virtual environments and
 model checkpoints remain excluded by .gitignore. The publication commit contains
 source, configs, pinned requirements, tests, documentation and compact measured
 evidence; push completion and commit identity are recorded separately in Notion.
+
+## 2026-10-01 23:02 Asia/Manila — Local corpus expansion implementation
+
+The owner requested completing the next preparation checkpoint in one turn.
+Scope: expand unique training text locally with the frozen CP2 tokenizer and
+validation collection, verify packed data and record evidence. This is CP4
+preparation, not authorization to restart a GPU or start main training. The
+provided RunPod screenshot shows a stopped Pod (Start Pod action), USD 13.72
+balance and displayed storage cost USD 0.01/hour; no live billing audit was done.
+
+Verified the correct HelixDepth workspace and clean main at 061468f before edits.
+Read existing data selection, packing, training guide, architecture, handoff
+and applicable user instructions. Context7 official Datasets documentation
+confirmed pinned revision and streaming iteration. No dependencies changed.
+
+Added configs/expansion.yaml, src/helixdepth/expansion.py,
+scripts/expand_corpus.py and tests/test_expansion.py. Added
+docs/corpus-expansion.md and linked it from data/training guides. Preserve
+original train order, then append first eligible occurrences in pinned source
+order. Seed 2026 split assignments and exact canonical text/source-ID exclusions
+keep frozen and new held-out groups out of training. All scanned decisions are
+audited. Reused IDs with conflicting text fail closed. No BPE fitting occurs.
+
+Bounds: at most 500,000 source rows; 100,000,000 total training tokens including
+EOS; 200,000 training documents; 512 MiB canonical training text. Stop before
+first whole document exceeding a cap. This is capacity, not a selected final
+training budget. Output artifacts/corpus_100m_v1 remains Gitignored. Preserve
+existing outputs; interrupted builds require a new output directory.
+
+Command: .venv/Scripts/python.exe -m pytest -q -p no:cacheprovider
+--junitxml=docs/results/expansion_correctness.xml
+Result: 38 passed in 19.82 seconds (28 existing + 10 new cases). Tests cover frozen
+artifacts, deterministic fixture rebuilds, canonical duplicates, validation
+exclusion, source-ID conflicts, all capacity bounds, context 512 loader targets,
+packed corruption and source-audit order corruption.
+
+Started .venv/Scripts/python.exe -u scripts/expand_corpus.py locally. Build
+and full saved-data verification are in progress at this record; final measured
+counts and outcome follow separately. No GPU operation, main training, commit
+or push performed for this preparation change.
+
+## 2026-10-01 23:21 Asia/Manila — Corpus preparation complete
+
+The local command `.venv/Scripts/python.exe -u scripts/expand_corpus.py`
+completed successfully. Actual collection: 113,907 canonical-unique training
+documents, 99,999,146 tokens including EOS, 433,153,254 text bytes. Added
+105,449 documents and 92,675,862 tokens; retained all original training documents
+in their original order. Validation remains 443 documents / 385,550 tokens.
+
+Scanned 124,371 source rows from pinned revision
+87f09149ef4734204d70ed1d046ddc9ca3f2b8f9. Audit: 105,450 eligible candidates
+(one final candidate exceeded capacity and was not retained), 8,920 existing
+or duplicate occurrences, 5,882 reserved validation groups, 3,234 length
+exclusions and 885 domain exclusions. No tokenizer fit or document truncation.
+
+Full verification re-encoded all documents, checked exact round trips, every
+packed token/index, disjoint content/source IDs, source audit decisions/order,
+original training prefix and unchanged frozen artifacts. All checks passed.
+Tokenizer SHA256 a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2.
+Train binary SHA256 6b51a55e42ef2da46a7f5f0f87bfa323026bc899d94c24633c199b544c5c34b4.
+Manifest SHA256 84a8c807eae3d387c4d09247d83b1870e0ffffb9eb64ec6e55432af6011c2757.
+Validation binary SHA256 f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8,
+identical to original CP3 validation. Current preparation module/data helper
+hashes match the manifest. Fixture builds reproduce byte-for-byte; a second
+complete source download/rebuild was not run and is not claimed.
+
+Independent actual loader check: context 512 / batch 16, offsets 0 / 7315456 / 99983360,
+two loaders match and inputs/targets match direct int32 binary reads with
+exact one-token shift. Original-corpus recovery state correctly rejected.
+12,206 complete batches score 99,991,552 targets; 7,593 tail targets unused.
+Evidence: docs/results/corpus_expansion.json, expanded_loader.json and
+expansion_correctness.xml (38 tests passed in 19.82 seconds). Full verification
+command: `.venv/Scripts/python.exe scripts/expand_corpus.py --verify-only`.
+
+Created: configs/expansion.yaml; src/helixdepth/expansion.py;
+scripts/expand_corpus.py; tests/test_expansion.py; docs/corpus-expansion.md;
+docs/results/corpus_expansion.json; docs/results/expanded_loader.json;
+docs/results/expansion_correctness.xml. Modified: README.md, docs/data.md,
+docs/training.md, docs/records.md. No files deleted; model/trainer/dependency
+files unchanged. New ignored artifacts/corpus_100m_v1 contains tokenizer.json,
+tokenizer_training.json, source_card.md, train.jsonl, validation.jsonl,
+train.bin, validation.bin, train.index.jsonl, validation.index.jsonl,
+selection_audit.jsonl and manifest.json. Payload excluding manifest 968,326,372
+bytes. Existing CP2, packed CP3 and RunPod archive preserved. Expanded corpus
+requires separate transfer packaging; old archive still contains CP2 data.
+
+This completes local corpus preparation for CP4, not CP4 baseline training.
+The 100M capacity is not a final experiment token budget. No GPU restart,
+paid compute, main training, commit or push performed. Exact/canonical
+deduplication only; near-duplicate and exhaustive benchmark contamination
+checks remain unimplemented. Final budget, GPU recovery verification and
+official competition rules/deadline review remain pending.
+
+Notion synchronized and fetched again to verify the new checkpoint status and
+completion record: https://app.notion.com/p/3ecd08af02fb81f29b20de9cd85bfc83 .
+Repository whitespace check passed; generated expanded data remains Gitignored.
+
+## 2026-10-01 23:35 Asia/Manila — Official competition review
+
+Read the official overview, rules and organizer extension announcement.
+Created docs/competition-rules.md with source links, a concise requirement
+mapping and project-specific readiness gaps. Submission extension is confirmed;
+the older build-period clause remains inconsistent and was not silently resolved.
+No organizer message was sent. No participant-eligibility certification made.
+
+Both measured architectures are within the parameter cap. Our own validation
+is not a substitute for the named benchmark evaluation suite. Recommended
+next protocol: one matched pass,99,991,552 scored targets each,context512,batch16;
+recommendation only, not a configured or started training run. Existing local
+corpus changes preserved. No code/data changes, GPU actions, commit or push.
+Documentation-only verification: checked cited official pages and Git whitespace.
+Notion synchronization follows this record.
+
+Notion update completed and fetched again: current status and official-review record verified. No code tests rerun for this documentation-only change.
+
+## 2026-10-02 00:00 Manila — User-operated main training package ready
+
+Accepted organizer Discord clarification: October 2,23:59 Manila deadline.
+Latest user instruction: user runs every remote command; assistant prepares only.
+No Pod start, paid GPU execution, main training, benchmark run, commit or push.
+Observed stopped Pod balance USD13.71; existing files preserved.
+
+New protocol: configs/training_main.yaml; 12206 updates, batch16, context512,
+99991552 targets per model,244 warmup updates, seed2026,float32,deterministic
+math attention, AdamW3e-4, decay0.1, norm cap1. Prior throughput used default
+attention and is not a measurement of these deterministic main settings.
+
+Files created in this preparation:
+- configs/training_main.yaml: matched fixed main schedule.
+- scripts/run_experiment.py: training reports, full final validation, atomic
+  periodic recovery checkpoints, model export, full-model fresh-process gate.
+- scripts/setup_main.sh: verify and reuse existing Pod Python/CUDA environment.
+- scripts/train_both.sh: background-compatible sequential recovery/baseline/Helix
+  launcher; exits on failure, records exit code; preserves existing runs.
+- src/helixdepth/evaluation.py: causal continuation scoring with correct shift,
+  right padding and windowing, frozen-tokenizer boundary handling.
+- scripts/evaluate_model.py: prepared optional zero-shot harness adapter and
+  held-out WikiText103 slice perplexity; not yet run against trained models.
+- requirements/evaluation.in and evaluation.lock: optional pinned harness0.4.13
+  with Linux/CUDA dependencies; not needed to start training.
+- tests/test_main_experiment.py: score alignment/batching and main runner export,
+  full held-out validation, token position and output-preservation checks.
+- docs/main-experiment.md: protocol, recovery and limitations.
+- docs/start-training.md: exact Windows upload, Linux launch, backup commands.
+- docs/results/main_preparation.xml:40 tests passed in18.60seconds.
+- docs/results/main_package_v2.json: successful archive verification evidence.
+Modified scripts/package_runpod.py and scripts/verify_transfer.py to package the
+expanded corpus and require original fitting IDs be training-only, with frozen
+CP2 provenance and verified expanded-manifest hash. Faster gzip level1 packaging.
+Modified docs/competition-rules.md to accept organizer clarification and record
+training authorization. This record added to docs/records.md.
+
+An intermediate artifacts/runpod_main_v1 archive failed its round-trip check
+because source changed while packaging. Do not use it. Final runpod_main_v2
+passed all86 packaged file checks,16384 vocabulary,zero split overlap,8458
+original tokenizer-fitting IDs contained only in expanded training documents.
+Final archive188347545bytes SHA256:
+18eadeb8c9af26fbddc61e34b29ba5ce7d35c28023478579fe52fab8f63791fa
+Archive and generated corpus stay Gitignored. No GPU recovery/training/evaluation
+results claimed. Three-hour cap per main process does not stop Pod billing.
+
+Exact local test: .venv/Scripts/python.exe -m pytest -q
+Execution flow: verify transfer -> environment/tests -> fresh-process GPU recovery
+for both models -> baseline main -> HelixDepth main -> user downloads/checksums.
+Notion current checkpoint and preparation record synchronized. Main training is
+ready for user launch; CP4/CP5 are not complete until measured runs finish.
+
+## 2026-10-02 — Replacement Pod setup correction
+
+User deleted the unavailable original Pod and created a new one. Screenshot
+shows new direct TCP endpoint213.173.99.46:20000 and balanceUSD13.70.
+Updated docs/start-training.md to use that endpoint and setup_runpod.sh for a
+fresh pinned environment, replacing setup_main.sh reuse instructions. Both
+scripts already exist in verified runpod_main_v2; no archive rebuild or code
+change required. Reviewed actual fresh setup script and RunPod Context7 SSH/SCP
+documentation. No remote commands executed by assistant; user remains operator.
+Notion current checkpoint updated. Main training not yet reported as started.
+
+## 2026-10-02 — User launch evidence and authorized repository publication
+
+User terminal screenshot confirms replacement Pod setup:40 tests passed in45.99s.
+Background train_both.sh started; observed baseline step4/4,loss9.7973 and14194
+training targets/sec during the recovery check. This is real gradient training
+for the recovery gate, not proof that the12206-step baseline main run began.
+CP4 is in progress at its recovery gate; CP5 is queued by the launcher. Exact
+GPU resume comparison completion, main completion and benchmark scores remain
+unconfirmed. No remote access/commands executed by assistant; user is operator.
+
+Created docs/results/training_launch.json from screenshot evidence, explicitly
+labeling it as reported evidence rather than downloaded logs. Updated README.md,
+docs/training.md and this record. Notion is synchronized with this same status.
+User authorized repushing the repository. Publish source/configuration/docs/tests
+and small measured reports; artifacts, datasets,tokenizer binaries,transfer
+archives,.venv and checkpoints stay ignored. Do not modify/redeploy the currently
+running Pod or its checksum-verified package as part of this publication.
+
+No competition outcome can be guaranteed. Required next evidence is completed
+matched runs, checksum-verified backups, required benchmark results, and an
+accurate explanation/demo. Recovery loss alone does not establish model quality.
+Full changed-file inventory is available in the publication commit; preparation
+file purposes are recorded in the preceding main-package entry.

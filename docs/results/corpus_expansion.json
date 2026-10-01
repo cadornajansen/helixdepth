@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "checkpoint": "CP4 preparation: corpus expansion, not training",
+  "splits": {
+    "validation": {
+      "documents": 443,
+      "tokens_including_eos": 385550,
+      "text_tokens": 385107,
+      "text_bytes": 1693522
+    },
+    "train": {
+      "documents": 113907,
+      "tokens_including_eos": 99999146,
+      "text_tokens": 99885239,
+      "text_bytes": 433153254
+    }
+  },
+  "new_training_documents": 105449,
+  "new_training_tokens": 92675862,
+  "manifest_sha256": "84a8c807eae3d387c4d09247d83b1870e0ffffb9eb64ec6e55432af6011c2757",
+  "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+  "source_revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "limits": {
+    "candidate_documents": 500000,
+    "max_train_tokens": 100000000,
+    "max_train_documents": 200000,
+    "max_train_text_bytes": 536870912
+  },
+  "selection_counts": {
+    "scanned_documents": 124371,
+    "eligible_train": 105450,
+    "duplicate_or_existing": 8920,
+    "reserved_validation": 5882,
+    "excluded_length": 3234,
+    "excluded_domain": 885
+  },
+  "files": {
+    "selection_audit.jsonl": {
+      "sha256": "3d114ba6ccd829d9c1ce8b01aaf019e992cf1c603681d3f32e09e6e82784a2f7",
+      "bytes": 56112546
+    },
+    "source_card.md": {
+      "sha256": "a0cc8998a20499432b28b6575f3046b714938eb8e11b8d59a1d25ddf3716061e",
+      "bytes": 26354
+    },
+    "tokenizer.json": {
+      "sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+      "bytes": 1137470
+    },
+    "tokenizer_training.json": {
+      "sha256": "67d11f9b9d7ea49dbd79e3c2446effccd635928c1d88a9960528e930c5176237",
+      "bytes": 618036
+    },
+    "train.bin": {
+      "sha256": "6b51a55e42ef2da46a7f5f0f87bfa323026bc899d94c24633c199b544c5c34b4",
+      "bytes": 399996584
+    },
+    "train.index.jsonl": {
+      "sha256": "abda199fd2027055951d29efaccc770466421aa4d61db4f23dcc8226678d5a5b",
+      "bytes": 13575042
+    },
+    "train.jsonl": {
+      "sha256": "120f883fc61daa09b7c976c356b0d82b0e6ba0a38b7d32548d4f43a2cd76fc81",
+      "bytes": 493337041
+    },
+    "validation.bin": {
+      "sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+      "bytes": 1542200
+    },
+    "validation.index.jsonl": {
+      "sha256": "bc9caf9901df91774d85f7b896729201c24b8d604f842b7323c78203fa59fc40",
+      "bytes": 51818
+    },
+    "validation.jsonl": {
+      "sha256": "177ce3ee31527b1fb9ca7f3b735264cad386329764bcd5a837d5947a9310c509",
+      "bytes": 1929281
+    }
+  },
+  "checks": {
+    "frozen_tokenizer_and_fit_provenance": true,
+    "unchanged_primary_validation": true,
+    "original_training_prefix_preserved": true,
+    "disjoint_content_and_source_ids": true,
+    "seeded_split_separation": true,
+    "all_text_round_trips": true,
+    "source_audit_order_and_decisions_verified": true,
+    "every_packed_token_and_index_verified": true,
+    "bounded_unique_training_growth": true
+  },
+  "full_batches_context512_batch16": 12206,
+  "main_training_started": false,
+  "limitations": [
+    "Bounded source prefix, not a uniform sample",
+    "Canonical exact deduplication only; near duplicates untested",
+    "Domain exclusions do not prove benchmark decontamination",
+    "Capacity is not the final training token budget"
+  ]
+}

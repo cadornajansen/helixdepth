@@ -1,5 +1,8 @@
 # CP2 data and tokenizer
 
+For the later frozen-tokenizer expansion, see [corpus expansion](corpus-expansion.md).
+CP2's original artifacts and the historical results below remain unchanged.
+
 ## Reproduce locally (PowerShell, repository root)
 
 ```powershell

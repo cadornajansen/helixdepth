@@ -1,0 +1,14 @@
+context: 512
+batch_size: 16
+learning_rate: 0.0003
+weight_decay: 0.1
+gradient_clip: 1.0
+warmup_steps: 244
+schedule_steps: 12206
+minimum_lr_fraction: 0.1
+seed: 2026
+deterministic: true
+cpu_threads: 1
+validation_batches: 64
+checkpoint_every: 500
+precision: float32

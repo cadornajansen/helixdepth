@@ -1,0 +1,8 @@
+# Preparation capacity, not the final model-training budget.
+base_dir: artifacts/cp2
+base_evidence: docs/results/cp2.json
+output_dir: artifacts/corpus_100m_v1
+candidate_documents: 500000
+max_train_tokens: 100000000
+max_train_documents: 200000
+max_train_text_bytes: 536870912

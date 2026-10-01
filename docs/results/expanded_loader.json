@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "context": 512,
+  "batch_size": 16,
+  "checked_offsets": [
+    0,
+    7315456,
+    99983360
+  ],
+  "two_independent_loaders_match": true,
+  "explicit_shift_matches_binary": true,
+  "old_corpus_resume_rejected": true,
+  "validation_binary_unchanged": true,
+  "train_bin_sha256": "6b51a55e42ef2da46a7f5f0f87bfa323026bc899d94c24633c199b544c5c34b4",
+  "full_batches": 12206,
+  "usable_prediction_targets": 99991552,
+  "unused_tail_targets": 7593,
+  "main_training_started": false
+}

@@ -1,0 +1,22 @@
+{
+  "reported_date": "2026-10-02",
+  "timezone": "Asia/Manila",
+  "evidence_type": "user-provided terminal screenshot, not downloaded runtime logs",
+  "checkpoint": "CP4 launch: GPU recovery gate in progress; CP5 queued after baseline",
+  "setup_tests": {"passed": 40, "seconds": 45.99},
+  "background_launcher_started": true,
+  "observed_recovery_output": {
+    "variant": "baseline",
+    "step": 4,
+    "stop_after": 4,
+    "loss_displayed": 9.7973,
+    "training_targets_per_second_displayed": 14194
+  },
+  "recovery_exact_match_confirmed": false,
+  "main_training_started_confirmed": false,
+  "main_training_completed_confirmed": false,
+  "benchmarks_completed": false,
+  "main_steps_per_model": 12206,
+  "main_targets_per_model": 99991552,
+  "limitation": "Four recovery updates are not a stable throughput benchmark or evidence of language quality. No new remote commands were executed by the assistant."
+}

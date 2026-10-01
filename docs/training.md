@@ -161,7 +161,8 @@ Before the main experiment:
    corpus. Smoke weights are discarded; their checkpoints cannot resume against
    different data. Choose the matched token budget only after GPU profiling.
 
-Expansion is documented here, not executed in CP3. Current rules/deadline still
+Expansion was not executed in CP3; the later [local corpus expansion](corpus-expansion.md)
+implements this preparation separately. Current rules/deadline still
 need verification before main training/submission. No paid compute authorized.
 
 Context7 official PyTorch documentation informed checkpoint restore ordering,
@@ -240,5 +241,10 @@ Plain-English meaning: the complete models fit the GPU and can perform short
 learning runs without reported numerical failures. We know their speed and
 memory demand. This does not demonstrate good English generation or sustained
 training reliability. Batch16 means16 sequences of512 tokens, or8192 prediction
-targets per update. The tokenizer/data remain unchanged; larger unique training
-text and final matched token budget still need preparation before main training.
+targets per update. A later [corpus expansion](corpus-expansion.md) now provides
+99,999,146 training tokens with the original tokenizer and validation unchanged.
+The matched budget is now fixed at99,991,552 targets per model; see
+[main protocol](main-experiment.md). Organizer-confirmed deadline is October2,
+23:59 Manila. The user launched the background pipeline on October2; screenshot
+evidence shows baseline step4/4 during the GPU recovery gate, not main training.
+GPU recovery completion, CP4 baseline and CP5 HelixDepth results remain pending.

@@ -27,7 +27,15 @@ def verify_files(root: Path, manifest: dict[str, Any]) -> int:
 def verify_package(root: Path) -> dict[str, Any]:
     package = json.loads((root / "transfer_manifest.json").read_text(encoding="utf-8"))
     count = verify_files(root, package)
-    packed = json.loads((root / "artifacts/cp3_data/manifest.json").read_text(encoding="utf-8"))
+    directory = package.get("data_directory", "artifacts/cp3_data")
+    if directory not in ("artifacts/cp3_data", "artifacts/corpus_100m_v1"):
+        raise ValueError("Unrecognized packed corpus")
+    packed = json.loads((root / directory / "manifest.json").read_text(encoding="utf-8"))
+    expanded = directory == "artifacts/corpus_100m_v1"
+    if expanded:
+        expansion = json.loads((root / "docs/results/corpus_expansion.json").read_text(encoding="utf-8"))
+        if not expansion["passed"] or sha256(root / directory / "manifest.json") != expansion["manifest_sha256"]:
+            raise ValueError("Expanded corpus verification evidence mismatch")
     tokenizer_path = root / "artifacts/cp2/tokenizer.json"
     tokenizer = json.loads(tokenizer_path.read_text(encoding="utf-8"))
     vocabulary = set(tokenizer["model"]["vocab"].values()) | {row["id"] for row in tokenizer["added_tokens"]}
@@ -36,8 +44,8 @@ def verify_package(root: Path) -> dict[str, Any]:
     ids: dict[str, set[str]] = {}
     for split in ("train", "validation"):
         info = packed["splits"][split]
-        binary = root / f"artifacts/cp3_data/{split}.bin"
-        index = root / f"artifacts/cp3_data/{split}.index.jsonl"
+        binary = root / directory / f"{split}.bin"
+        index = root / directory / f"{split}.index.jsonl"
         if (sha256(binary) != info["bin_sha256"] or binary.stat().st_size != info["tokens"] * 4
                 or sha256(index) != info["index_sha256"]):
             raise ValueError(f"Packed manifest mismatch: {split}")
@@ -54,7 +62,9 @@ def verify_package(root: Path) -> dict[str, Any]:
     if ids["train"] & ids["validation"]:
         raise ValueError("Training/validation document overlap")
     fitting = json.loads((root / "artifacts/cp2/tokenizer_training.json").read_text(encoding="utf-8"))
-    if fitting["training_split"] != "train" or set(fitting["fitted_document_ids"]) != ids["train"]:
+    fitted_ids = set(fitting["fitted_document_ids"])
+    fitting_matches = fitted_ids <= ids["train"] if expanded else fitted_ids == ids["train"]
+    if fitting["training_split"] != "train" or not fitting_matches or fitted_ids & ids["validation"]:
         raise ValueError("Tokenizer fitting IDs differ from training documents")
     cp2 = json.loads((root / "artifacts/cp2/manifest.json").read_text(encoding="utf-8"))
     if cp2["settings"]["revision"] != packed["source_revision"]:
@@ -66,7 +76,8 @@ def verify_package(root: Path) -> dict[str, Any]:
         if sha256(root / "artifacts/cp2" / name) != evidence["files"][name]["sha256"]:
             raise ValueError(f"CP2 provenance checksum mismatch: {name}")
     return {"passed": True, "files_verified": count, "vocabulary_entries": len(vocabulary),
-            "split_overlap": 0, "tokenizer_fitting_ids_match_train": True,
+            "split_overlap": 0, "tokenizer_fitting_ids_are_training_only": True,
+            "data_directory": directory, "fitted_documents": len(fitted_ids),
             "splits": packed["splits"], "source_revision": packed["source_revision"]}
 
 

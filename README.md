@@ -8,7 +8,13 @@ Both models start from random initialization.
 Checkpoint 1 implements architecture and CPU correctness checks. Checkpoint 2
 prepares a fixed English corpus and an own byte-level BPE tokenizer. Checkpoint 3
 adds packed training, validation and verified deterministic CPU resumption.
-Full-model GPU profiling is measured; main training and benchmark scores remain pending.
+Full-model GPU profiling and an expanded ~100M-token corpus are verified.
+On October 2, the user launched the CP4/CP5 background pipeline on a replacement
+Pod. The supplied terminal screenshot confirms 40 setup tests passed and the
+baseline four-step GPU recovery run executed. Recovery completion and main-run
+progress are not yet confirmed. Benchmark scores remain pending.
+See [current training status](docs/results/training_launch.json),
+[main protocol](docs/main-experiment.md) and [launch/recovery commands](docs/start-training.md).
 
 ## Reproduce checkpoint 1 (PowerShell)
 
@@ -89,8 +95,8 @@ tests; transfer/profiling checks bring the current suite to 28. See [training fl
 Existing packed/run directories are preserved; use a new output directory for
 a repeat run as documented. The CP2 tokenizer remains fixed. Its 7.32M training
 tokens are preparation data: 500M processed tokens would require about 68.3
-passes. The stream does not cycle automatically. Expand unique training text
-while preserving validation separation before the main experiment.
+passes. The stream does not cycle automatically. A larger frozen-tokenizer
+collection is now verified; see the CP4 preparation section below.
 Final token budget is open. Both full models completed an RTX 4090 float32
 batch-1/context-512 profile; both now pass timing checks after a longer baseline repeat. GPU resumption,
 mixed precision and sustained main training remain unvalidated. See
@@ -112,10 +118,30 @@ Main training remains pending.
 
 Measured [larger-batch GPU evidence](docs/results/gpu_profile_larger_batches_summary.json)
 shows throughput plateauing at batch 16; batch 32 nearly doubles memory without
-meaningful speed improvement in this run. Preparation corpus expansion, final
-budget, competition-rule verification and GPU recovery checks remain unresolved.
+meaningful speed improvement in this run. Final training budget, competition-rule
+verification and GPU recovery checks remain unresolved.
 
 [Completed GPU profiling evidence](docs/results/gpu_profiling_complete.json)
 combines the original runs with successful longer-window baseline repeats.
 Seven remote result/environment files were downloaded and checksum-verified.
 The GPU can now be stopped; main-run preparation is a separate next task.
+
+## CP4 preparation: expanded training corpus
+
+Local expansion is verified: **113,907 training documents / 99,999,146 tokens**
+including EOS, compared with the original 7,323,284 tokens. The original
+443-document validation set and 16,384-entry tokenizer remain unchanged.
+Every saved text/token/index and selection decision passed verification.
+All **38 tests passed**. No main training has started; 100M is preparation
+capacity, not the final agreed training budget.
+
+See [selection policy, execution flow and exact commands](docs/corpus-expansion.md),
+[measured corpus evidence](docs/results/corpus_expansion.json) and
+[context-512/batch-16 loader checks](docs/results/expanded_loader.json).
+Generated files are in ignored `artifacts/corpus_100m_v1/`; existing CP2 data
+and the earlier RunPod transfer archive are preserved. The expanded corpus
+is not included in that earlier archive.
+
+```powershell
+.venv/Scripts/python.exe scripts/expand_corpus.py --verify-only
+```
