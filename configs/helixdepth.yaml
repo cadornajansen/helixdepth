@@ -1,0 +1,13 @@
+variant: helixdepth
+vocab_size: 16384
+max_context: 512
+width: 640
+heads: 10
+ffn_width: 1792
+base_blocks: 6
+stages: 12
+rank: 16
+depth_width: 32
+hyper_width: 64
+norm_eps: 0.000001
+rope_theta: 10000.0

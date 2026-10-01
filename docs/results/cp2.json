@@ -1,0 +1,116 @@
+{
+  "checkpoint": "CP2",
+  "passed": true,
+  "verified_at": "2026-10-01T15:48:56.831100+08:00",
+  "settings": {
+    "dataset_id": "HuggingFaceFW/fineweb-edu",
+    "dataset_config": "sample-10BT",
+    "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+    "source_split": "train",
+    "text_column": "text",
+    "seed": 2026,
+    "candidate_documents": 20000,
+    "max_documents": 10000,
+    "max_text_bytes": 33554432,
+    "min_document_bytes": 200,
+    "max_document_bytes": 20000,
+    "validation_per_mille": 50,
+    "excluded_domains": [
+      "wikipedia.org",
+      "huggingface.co",
+      "github.com"
+    ],
+    "vocab_size": 16384,
+    "min_pair_frequency": 2,
+    "special_tokens": [
+      "<pad>",
+      "<bos>",
+      "<eos>",
+      "<unk>"
+    ],
+    "output_dir": "artifacts/cp2"
+  },
+  "selection_counts": {
+    "scanned_documents": 20000,
+    "excluded_length": 570,
+    "excluded_domain": 140,
+    "duplicate_documents": 1,
+    "eligible_unique_documents": 19289,
+    "skipped_byte_budget": 10388,
+    "selected_unique_documents": 8901,
+    "selected_text_bytes": 33554189
+  },
+  "splits": {
+    "train": {
+      "documents": 8458,
+      "source_documents": 8458,
+      "text_bytes": 31860667,
+      "text_tokens": 7314826,
+      "tokens_including_eos": 7323284
+    },
+    "validation": {
+      "documents": 443,
+      "source_documents": 443,
+      "text_bytes": 1693522,
+      "text_tokens": 385107,
+      "tokens_including_eos": 385550
+    }
+  },
+  "vocab_size_including_special_tokens": 16384,
+  "special_token_ids": {
+    "<pad>": 0,
+    "<bos>": 1,
+    "<eos>": 2,
+    "<unk>": 3
+  },
+  "checks": {
+    "document_hashes": true,
+    "disjoint_content_and_source_ids": true,
+    "seeded_split_assignments": true,
+    "bounded_corpus": true,
+    "training_only_fit_provenance": true,
+    "saved_tokens_match_shared_tokenizer": true,
+    "all_document_round_trips": true,
+    "unicode_byte_fallback": true
+  },
+  "files": {
+    "manifest.json": {
+      "sha256": "e905c6f6d8da1cf27701c2e2f839a11df9ec0e16baf2f90b250ed15b3b479997",
+      "bytes": 2664
+    },
+    "source_card.md": {
+      "sha256": "a0cc8998a20499432b28b6575f3046b714938eb8e11b8d59a1d25ddf3716061e",
+      "bytes": 26354
+    },
+    "train.jsonl": {
+      "sha256": "c1518f7e99150c77a623eaa3a4dee81ec2e185e2c1deea9841fe097077104f22",
+      "bytes": 36323841
+    },
+    "validation.jsonl": {
+      "sha256": "177ce3ee31527b1fb9ca7f3b735264cad386329764bcd5a837d5947a9310c509",
+      "bytes": 1929281
+    },
+    "tokenizer.json": {
+      "sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+      "bytes": 1137470
+    },
+    "train.tokens.jsonl": {
+      "sha256": "38593c298b88ab49db8ed60ba875296e0b1d37b667cbc09bb3d04f9161fe58e1",
+      "bytes": 40131609
+    },
+    "validation.tokens.jsonl": {
+      "sha256": "c61acef798d52c4592ef499caaf1012add240b82b453acd3050a4372661358fa",
+      "bytes": 2112140
+    },
+    "tokenizer_training.json": {
+      "sha256": "67d11f9b9d7ea49dbd79e3c2446effccd635928c1d88a9960528e930c5176237",
+      "bytes": 618036
+    }
+  },
+  "limitations": [
+    "Bounded source prefix is not a uniform sample of the whole dataset",
+    "Exact/canonical duplicate grouping; near-duplicate detection is not implemented",
+    "Wikipedia, Hugging Face and GitHub source domains excluded; no benchmark datasets loaded. Heuristic only: benchmark text elsewhere and near duplicates are not exhaustively checked.",
+    "No language-model training or quality evaluation performed"
+  ]
+}

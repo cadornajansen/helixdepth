@@ -1,0 +1,26 @@
+{
+  "checkpoint": "CP3",
+  "requested_pre_rental_scope_passed": true,
+  "tests_passed": 23,
+  "fresh_process_exact_resume_both_models": true,
+  "same_data_order": true,
+  "context": 512,
+  "precision": "float32",
+  "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+  "code_and_evidence_sha256": {
+    "configs/training.yaml": "1eaec849c9539e858893fae6903f7f5bfa50ed8fac989adf4e13319d9a92efd9",
+    "src/helixdepth/packing.py": "75505a24e76d164933cf58bd1f66e1f43ef9e81344b92ec3f1c20fcc2fcf0476",
+    "src/helixdepth/training.py": "b2f894dd8f5ee3c20de237508d094206242e8f8a2cce3bc000098dc2c8a98d13",
+    "scripts/pack_data.py": "c4d8627093111e7a9e283775ee4e8677f836a625114d3453d8c14c320b17b19e",
+    "scripts/train.py": "01c2bdce72866c0d475e3ae85319312b2602b9f3da657e28cff4ba28fe917460",
+    "tests/test_training.py": "ebe33124f34becf32dc29e8cd6194af3d2c988651f3c0f6296ce80f97b0dcdd4",
+    "docs/results/cp3_smoke.json": "20dbf7f8c24b760a79bea5813750f4562a46e853ec324fe69ef015248c6daf22",
+    "docs/results/cp3_packing.json": "01ba0015fcddd88f7911b898c3538b22278ff7dc6cbb738d34d8e9ba36fb154d",
+    "docs/results/cp3_correctness.xml": "26ba26b43468c58ef78491032ea02dc631cba4b090bd9c838115c069144f588d"
+  },
+  "gpu_profile_status": "prepared_not_executed",
+  "full_size_compute_validated": false,
+  "final_training_token_budget": null,
+  "corpus_expansion_status": "documented_not_executed",
+  "paid_gpu_spend": 0
+}

@@ -1,0 +1,18 @@
+{
+  "checkpoint_archive_round_trip_passed": true,
+  "files_verified": 6,
+  "step": 4,
+  "tokens_processed": 2048,
+  "checkpoint_sha256": "7379dc2086f0bda721239bdc4d0afbcfcb591460e78f1ef6a0a3dc7552511e40",
+  "archive_sha256": "83ddd0517a794dab2428e72a1017ea5a7daef5a3530fc747175e3361324a34cf",
+  "bash_syntax_check": "passed; setup not executed",
+  "gpu_execution": "not executed; CPU-only machine",
+  "main_training_started": false,
+  "rentals_or_spend": false,
+  "restored_checkpoint_load_passed": true,
+  "next_batch_shape": [
+    1,
+    512
+  ],
+  "correctness_tests": 28
+}

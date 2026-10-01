@@ -1,0 +1,8 @@
+# Linux x86_64, Python 3.12.13; CUDA 12.8 wheels, no torchvision/torchaudio.
+torch==2.8.0+cu128
+PyYAML==6.0.2
+pytest==8.4.2
+datasets==5.0.1
+tokenizers==0.23.2
+setuptools==84.0.0
+wheel==0.46.3

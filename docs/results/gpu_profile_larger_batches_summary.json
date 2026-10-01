@@ -1,0 +1,770 @@
+{
+  "raw_report": "artifacts\\downloaded_profile\\profile_larger_batches.json",
+  "raw_sha256": "0ff84572d2eeb75e5cddd9004ce3695fd46d6dcbd4c1718aefde03d231e7a590",
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.8.0+cu128",
+  "cuda_runtime": "12.8",
+  "context": 512,
+  "precision": "float32",
+  "all_numerical_checks_passed": true,
+  "identical_data_order_per_batch": true,
+  "recommended_common_batch_size": 16,
+  "recommendation_scope": "Proposed experiment setting; not an authorized final training configuration",
+  "timing_checks_pending": [
+    "baseline batch2",
+    "baseline batch4"
+  ],
+  "main_training_started": false,
+  "runs": [
+    {
+      "variant": "baseline",
+      "batch_size": 2,
+      "model_config": {
+        "variant": "baseline",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 6,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 2,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 4.838244840502739,
+          "target_tokens": 102400,
+          "tokens_per_second": 21164.699880992313
+        },
+        {
+          "seconds": 4.834626693278551,
+          "target_tokens": 102400,
+          "tokens_per_second": 21180.53915979985
+        },
+        {
+          "seconds": 4.852169068530202,
+          "target_tokens": 102400,
+          "tokens_per_second": 21103.963722974426
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 20480,
+      "status": "passed",
+      "target_tokens": 307200,
+      "wall_seconds": 14.525040602311492,
+      "training_tokens_per_second": 21149.682703889495,
+      "timing_cv": 0.0015605071464850206,
+      "timing_stable": false,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 1130379776,
+      "peak_reserved_bytes": 1153433600,
+      "finite_losses_and_gradients": true,
+      "end_offset": 327680,
+      "final_loss": 7.009702682495117,
+      "parameters": 40968320,
+      "completed_steps": 320
+    },
+    {
+      "variant": "baseline",
+      "batch_size": 4,
+      "model_config": {
+        "variant": "baseline",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 6,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 4,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 4.88792003877461,
+          "target_tokens": 204800,
+          "tokens_per_second": 41899.21242069723
+        },
+        {
+          "seconds": 4.936688942834735,
+          "target_tokens": 204800,
+          "tokens_per_second": 41485.29558404792
+        },
+        {
+          "seconds": 4.9230460580438375,
+          "target_tokens": 204800,
+          "tokens_per_second": 41600.26081116472
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 40960,
+      "status": "passed",
+      "target_tokens": 614400,
+      "wall_seconds": 14.747655039653182,
+      "training_tokens_per_second": 41660.86054684723,
+      "timing_cv": 0.004187470692400825,
+      "timing_stable": false,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 1670441472,
+      "peak_reserved_bytes": 1744830464,
+      "finite_losses_and_gradients": true,
+      "end_offset": 655360,
+      "final_loss": 6.9596405029296875,
+      "parameters": 40968320,
+      "completed_steps": 320
+    },
+    {
+      "variant": "baseline",
+      "batch_size": 8,
+      "model_config": {
+        "variant": "baseline",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 6,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 8,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 5.1815307177603245,
+          "target_tokens": 409600,
+          "tokens_per_second": 79049.99937490409
+        },
+        {
+          "seconds": 5.1848101411014795,
+          "target_tokens": 409600,
+          "tokens_per_second": 78999.9997787736
+        },
+        {
+          "seconds": 5.183349492028356,
+          "target_tokens": 409600,
+          "tokens_per_second": 79022.26169196914
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 81920,
+      "status": "passed",
+      "target_tokens": 1228800,
+      "wall_seconds": 15.54969035089016,
+      "training_tokens_per_second": 79024.08165508299,
+      "timing_cv": 0.00025881997745268116,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 2741062144,
+      "peak_reserved_bytes": 2948595712,
+      "finite_losses_and_gradients": true,
+      "end_offset": 1310720,
+      "final_loss": 6.867893218994141,
+      "parameters": 40968320,
+      "completed_steps": 320
+    },
+    {
+      "variant": "baseline",
+      "batch_size": 16,
+      "model_config": {
+        "variant": "baseline",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 6,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 16,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 8.101753821596503,
+          "target_tokens": 819200,
+          "tokens_per_second": 101113.90916572818
+        },
+        {
+          "seconds": 8.133874664083123,
+          "target_tokens": 819200,
+          "tokens_per_second": 100714.6082072489
+        },
+        {
+          "seconds": 8.148011039942503,
+          "target_tokens": 819200,
+          "tokens_per_second": 100539.87359420425
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 163840,
+      "status": "passed",
+      "target_tokens": 2457600,
+      "wall_seconds": 24.38363952562213,
+      "training_tokens_per_second": 100788.89156057175,
+      "timing_cv": 0.0023837039889907296,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 4912581120,
+      "peak_reserved_bytes": 5163188224,
+      "finite_losses_and_gradients": true,
+      "end_offset": 2621440,
+      "final_loss": 6.3140974044799805,
+      "parameters": 40968320,
+      "completed_steps": 320
+    },
+    {
+      "variant": "baseline",
+      "batch_size": 32,
+      "model_config": {
+        "variant": "baseline",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 6,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 16.124338483437896,
+          "target_tokens": 1638400,
+          "tokens_per_second": 101610.37004295597
+        },
+        {
+          "seconds": 16.16912687756121,
+          "target_tokens": 1638400,
+          "tokens_per_second": 101328.90986672249
+        },
+        {
+          "seconds": 16.181493250653148,
+          "target_tokens": 1638400,
+          "tokens_per_second": 101251.47133339303
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 327680,
+      "status": "passed",
+      "target_tokens": 4915200,
+      "wall_seconds": 48.474958611652255,
+      "training_tokens_per_second": 101396.68275690905,
+      "timing_cv": 0.0015208489633719306,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 9250507264,
+      "peak_reserved_bytes": 10095689728,
+      "finite_losses_and_gradients": true,
+      "end_offset": 5242880,
+      "final_loss": 6.037345886230469,
+      "parameters": 40968320,
+      "completed_steps": 320
+    },
+    {
+      "variant": "helixdepth",
+      "batch_size": 2,
+      "model_config": {
+        "variant": "helixdepth",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 12,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 2,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 11.537986600771546,
+          "target_tokens": 102400,
+          "tokens_per_second": 8875.031974222651
+        },
+        {
+          "seconds": 11.529802715405822,
+          "target_tokens": 102400,
+          "tokens_per_second": 8881.331496086728
+        },
+        {
+          "seconds": 11.54537676088512,
+          "target_tokens": 102400,
+          "tokens_per_second": 8869.35109358437
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 20480,
+      "status": "passed",
+      "target_tokens": 307200,
+      "wall_seconds": 34.61316607706249,
+      "training_tokens_per_second": 8875.235490334871,
+      "timing_cv": 0.0005513262690287794,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 1484160512,
+      "peak_reserved_bytes": 1528823808,
+      "finite_losses_and_gradients": true,
+      "end_offset": 327680,
+      "final_loss": 7.074324607849121,
+      "parameters": 41184432,
+      "completed_steps": 320
+    },
+    {
+      "variant": "helixdepth",
+      "batch_size": 4,
+      "model_config": {
+        "variant": "helixdepth",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 12,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 4,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 11.636460155248642,
+          "target_tokens": 204800,
+          "tokens_per_second": 17599.854016397305
+        },
+        {
+          "seconds": 12.05724729411304,
+          "target_tokens": 204800,
+          "tokens_per_second": 16985.634863771415
+        },
+        {
+          "seconds": 12.047517608851194,
+          "target_tokens": 204800,
+          "tokens_per_second": 16999.35261763265
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 40960,
+      "status": "passed",
+      "target_tokens": 614400,
+      "wall_seconds": 35.741225058212876,
+      "training_tokens_per_second": 17190.233378942863,
+      "timing_cv": 0.01665414507819764,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 2372578816,
+      "peak_reserved_bytes": 2510290944,
+      "finite_losses_and_gradients": true,
+      "end_offset": 655360,
+      "final_loss": 7.03934383392334,
+      "parameters": 41184432,
+      "completed_steps": 320
+    },
+    {
+      "variant": "helixdepth",
+      "batch_size": 8,
+      "model_config": {
+        "variant": "helixdepth",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 12,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 8,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 12.155494259670377,
+          "target_tokens": 409600,
+          "tokens_per_second": 33696.69642796633
+        },
+        {
+          "seconds": 11.818941557779908,
+          "target_tokens": 409600,
+          "tokens_per_second": 34656.233639667815
+        },
+        {
+          "seconds": 11.754729695618153,
+          "target_tokens": 409600,
+          "tokens_per_second": 34845.54818412267
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 81920,
+      "status": "passed",
+      "target_tokens": 1228800,
+      "wall_seconds": 35.72916551306844,
+      "training_tokens_per_second": 34392.07108127251,
+      "timing_cv": 0.014620160532096202,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 4127526400,
+      "peak_reserved_bytes": 4433379328,
+      "finite_losses_and_gradients": true,
+      "end_offset": 1310720,
+      "final_loss": 6.924554824829102,
+      "parameters": 41184432,
+      "completed_steps": 320
+    },
+    {
+      "variant": "helixdepth",
+      "batch_size": 16,
+      "model_config": {
+        "variant": "helixdepth",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 12,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 16,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 17.43606223538518,
+          "target_tokens": 819200,
+          "tokens_per_second": 46983.085340077254
+        },
+        {
+          "seconds": 17.48672523163259,
+          "target_tokens": 819200,
+          "tokens_per_second": 46846.96472030733
+        },
+        {
+          "seconds": 17.540717262774706,
+          "target_tokens": 819200,
+          "tokens_per_second": 46702.76521351405
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 163840,
+      "status": "passed",
+      "target_tokens": 2457600,
+      "wall_seconds": 52.463504729792476,
+      "training_tokens_per_second": 46843.99207901948,
+      "timing_cv": 0.0024433308384268593,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 7676415488,
+      "peak_reserved_bytes": 8095006720,
+      "finite_losses_and_gradients": true,
+      "end_offset": 2621440,
+      "final_loss": 6.3691301345825195,
+      "parameters": 41184432,
+      "completed_steps": 320
+    },
+    {
+      "variant": "helixdepth",
+      "batch_size": 32,
+      "model_config": {
+        "variant": "helixdepth",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 640,
+        "heads": 10,
+        "ffn_width": 1792,
+        "base_blocks": 6,
+        "stages": 12,
+        "rank": 16,
+        "depth_width": 32,
+        "hyper_width": 64,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 20,
+        "schedule_steps": 320,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": false,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 35.08174445293844,
+          "target_tokens": 1638400,
+          "tokens_per_second": 46702.35262097316
+        },
+        {
+          "seconds": 35.107785595580935,
+          "target_tokens": 1638400,
+          "tokens_per_second": 46667.71122717087
+        },
+        {
+          "seconds": 35.055095909163356,
+          "target_tokens": 1638400,
+          "tokens_per_second": 46737.85529628873
+        }
+      ],
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 327680,
+      "status": "passed",
+      "target_tokens": 4915200,
+      "wall_seconds": 105.24462595768273,
+      "training_tokens_per_second": 46702.622155513454,
+      "timing_cv": 0.0006131755300842835,
+      "timing_stable": true,
+      "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+      "peak_allocated_bytes": 14770064896,
+      "peak_reserved_bytes": 15936258048,
+      "finite_losses_and_gradients": true,
+      "end_offset": 5242880,
+      "final_loss": 6.074554443359375,
+      "parameters": 41184432,
+      "completed_steps": 320
+    }
+  ]
+}

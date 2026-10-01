@@ -1,0 +1,85 @@
+{
+  "raw_report": "artifacts\\downloaded_profile\\profile_baseline_b1_repeat.json",
+  "raw_sha256": "c95ce60f04c1559345c54f963b9ebc8d019626bb53fb102e22ace7c195dffdf5",
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.8.0+cu128",
+  "cuda_runtime": "12.8",
+  "context": 512,
+  "precision": "float32",
+  "scope": "Full-model baseline batch1 timing repeat; not main training",
+  "run": {
+    "variant": "baseline",
+    "batch_size": 1,
+    "model_config": {
+      "variant": "baseline",
+      "vocab_size": 16384,
+      "max_context": 512,
+      "width": 640,
+      "heads": 10,
+      "ffn_width": 1792,
+      "base_blocks": 6,
+      "stages": 6,
+      "rank": 16,
+      "depth_width": 32,
+      "hyper_width": 64,
+      "norm_eps": 1e-06,
+      "rope_theta": 10000.0
+    },
+    "training_config": {
+      "context": 512,
+      "batch_size": 1,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "gradient_clip": 1.0,
+      "warmup_steps": 20,
+      "schedule_steps": 620,
+      "minimum_lr_fraction": 0.1,
+      "seed": 2026,
+      "deterministic": false,
+      "cpu_threads": 1,
+      "validation_batches": 2,
+      "checkpoint_every": 2,
+      "precision": "float32"
+    },
+    "warmup_steps": 20,
+    "steps_per_window": 200,
+    "windows": [
+      {
+        "seconds": 9.565818347036839,
+        "target_tokens": 102400,
+        "tokens_per_second": 10704.781994079995
+      },
+      {
+        "seconds": 9.577533483505249,
+        "target_tokens": 102400,
+        "tokens_per_second": 10691.688019296067
+      },
+      {
+        "seconds": 9.635887017473578,
+        "target_tokens": 102400,
+        "tokens_per_second": 10626.94070761823
+      }
+    ],
+    "data_identity": {
+      "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+      "split": "train",
+      "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+      "tokens": 7323284
+    },
+    "start_offset": 10240,
+    "status": "passed",
+    "target_tokens": 307200,
+    "wall_seconds": 28.779238848015666,
+    "training_tokens_per_second": 10674.361529237647,
+    "timing_cv": 0.003188066527436473,
+    "timing_stable": true,
+    "stability_rule": "At least 3 windows, each >=5 seconds, throughput CV <=10%",
+    "peak_allocated_bytes": 850584064,
+    "peak_reserved_bytes": 929038336,
+    "finite_losses_and_gradients": true,
+    "end_offset": 317440,
+    "final_loss": 6.88604736328125,
+    "parameters": 40968320,
+    "completed_steps": 620
+  }
+}

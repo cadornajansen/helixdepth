@@ -1,0 +1,57 @@
+[
+  {
+    "variant": "baseline",
+    "total": 40968320,
+    "trainable": 40968320,
+    "analytical": 40968320,
+    "breakdown": {
+      "embedding": 10485760,
+      "blocks": 30474240,
+      "stage_norms": 7680,
+      "final_norm": 640
+    },
+    "tied_parameters_excluded": 10485760,
+    "stored_blocks": 6,
+    "schedule": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "device": "meta"
+  },
+  {
+    "variant": "helixdepth",
+    "total": 41184432,
+    "trainable": 41184432,
+    "analytical": 41184432,
+    "breakdown": {
+      "embedding": 10485760,
+      "blocks": 30474240,
+      "stage_norms": 15360,
+      "final_norm": 640,
+      "bases": 198656,
+      "conditioner.depth": 384,
+      "conditioner.network": 9392
+    },
+    "tied_parameters_excluded": 10485760,
+    "stored_blocks": 6,
+    "schedule": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "device": "meta"
+  }
+]

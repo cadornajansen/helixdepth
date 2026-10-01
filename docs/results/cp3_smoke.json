@@ -1,0 +1,352 @@
+{
+  "checkpoint": "CP3",
+  "local_checks_passed": true,
+  "runs": [
+    {
+      "variant": "baseline",
+      "model_config": {
+        "variant": "baseline",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 32,
+        "heads": 4,
+        "ffn_width": 64,
+        "base_blocks": 6,
+        "stages": 6,
+        "rank": 4,
+        "depth_width": 8,
+        "hyper_width": 16,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 1,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 2,
+        "schedule_steps": 8,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": true,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "runtime": {
+        "torch": "2.8.0+cpu",
+        "python": "3.12.13 (main, Jun 23 2026, 15:23:43) [MSC v.1944 64 bit (AMD64)]",
+        "device_type": "cpu",
+        "precision": "float32",
+        "deterministic": true,
+        "cpu_threads": 1,
+        "attention": "math"
+      },
+      "steps": 8,
+      "target_tokens": 4096,
+      "initial_validation": {
+        "loss": 9.703860759735107,
+        "scored_tokens": 1024,
+        "batches": 2,
+        "complete_split": false
+      },
+      "final_validation": {
+        "loss": 9.696690559387207,
+        "scored_tokens": 1024,
+        "batches": 2,
+        "complete_split": false
+      },
+      "history": [
+        {
+          "step": 1,
+          "loss": 9.71187973022461,
+          "learning_rate": 0.00015,
+          "gradient_norm_before_clip": 0.4577752351760864,
+          "data_offset_before": 0,
+          "data_offset_after": 512,
+          "target_tokens": 512
+        },
+        {
+          "step": 2,
+          "loss": 9.712349891662598,
+          "learning_rate": 0.0003,
+          "gradient_norm_before_clip": 0.4268754720687866,
+          "data_offset_before": 512,
+          "data_offset_after": 1024,
+          "target_tokens": 512
+        },
+        {
+          "step": 3,
+          "loss": 9.705446243286133,
+          "learning_rate": 0.0002819134295108992,
+          "gradient_norm_before_clip": 0.41745829582214355,
+          "data_offset_before": 1024,
+          "data_offset_after": 1536,
+          "target_tokens": 512
+        },
+        {
+          "step": 4,
+          "loss": 9.700892448425293,
+          "learning_rate": 0.00023249999999999999,
+          "gradient_norm_before_clip": 0.4371890127658844,
+          "data_offset_before": 1536,
+          "data_offset_after": 2048,
+          "target_tokens": 512
+        },
+        {
+          "step": 5,
+          "loss": 9.695221900939941,
+          "learning_rate": 0.000165,
+          "gradient_norm_before_clip": 0.4732952117919922,
+          "data_offset_before": 2048,
+          "data_offset_after": 2560,
+          "target_tokens": 512
+        },
+        {
+          "step": 6,
+          "loss": 9.69870662689209,
+          "learning_rate": 9.750000000000003e-05,
+          "gradient_norm_before_clip": 0.4996701180934906,
+          "data_offset_before": 2560,
+          "data_offset_after": 3072,
+          "target_tokens": 512
+        },
+        {
+          "step": 7,
+          "loss": 9.702262878417969,
+          "learning_rate": 4.808657048910077e-05,
+          "gradient_norm_before_clip": 0.47919490933418274,
+          "data_offset_before": 3072,
+          "data_offset_after": 3584,
+          "target_tokens": 512
+        },
+        {
+          "step": 8,
+          "loss": 9.701608657836914,
+          "learning_rate": 2.9999999999999997e-05,
+          "gradient_norm_before_clip": 0.5333917737007141,
+          "data_offset_before": 3584,
+          "data_offset_after": 4096,
+          "target_tokens": 512
+        }
+      ],
+      "data_state": {
+        "identity": {
+          "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+          "split": "train",
+          "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+          "tokens": 7323284
+        },
+        "offset": 4096,
+        "context": 512,
+        "batch_size": 1,
+        "epoch": 0
+      },
+      "validation_identity": {
+        "bin_sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+        "split": "validation",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 385550
+      },
+      "training_loop_seconds": 1.1095485999994708,
+      "resume_from": null,
+      "checkpoint": "C:\\Development\\personal\\helixdepth\\artifacts\\cp3_smoke\\baseline\\uninterrupted\\latest.pt",
+      "model_parameters": 586144,
+      "scope": "Short reliability run; validation is partial and losses are not a benchmark result",
+      "interruption_step": 4,
+      "fresh_process_resume": true,
+      "resume_exact_match": true,
+      "compared": [
+        "model",
+        "optimizer",
+        "scheduler",
+        "history",
+        "random_states",
+        "data_position",
+        "next_random_draws",
+        "next_batch"
+      ],
+      "resumed_checkpoint": "C:\\Development\\personal\\helixdepth\\artifacts\\cp3_smoke\\baseline\\resumed\\latest.pt"
+    },
+    {
+      "variant": "helixdepth",
+      "model_config": {
+        "variant": "helixdepth",
+        "vocab_size": 16384,
+        "max_context": 512,
+        "width": 32,
+        "heads": 4,
+        "ffn_width": 64,
+        "base_blocks": 6,
+        "stages": 12,
+        "rank": 4,
+        "depth_width": 8,
+        "hyper_width": 16,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0
+      },
+      "training_config": {
+        "context": 512,
+        "batch_size": 1,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.1,
+        "gradient_clip": 1.0,
+        "warmup_steps": 2,
+        "schedule_steps": 8,
+        "minimum_lr_fraction": 0.1,
+        "seed": 2026,
+        "deterministic": true,
+        "cpu_threads": 1,
+        "validation_batches": 2,
+        "checkpoint_every": 2,
+        "precision": "float32"
+      },
+      "runtime": {
+        "torch": "2.8.0+cpu",
+        "python": "3.12.13 (main, Jun 23 2026, 15:23:43) [MSC v.1944 64 bit (AMD64)]",
+        "device_type": "cpu",
+        "precision": "float32",
+        "deterministic": true,
+        "cpu_threads": 1,
+        "attention": "math"
+      },
+      "steps": 8,
+      "target_tokens": 4096,
+      "initial_validation": {
+        "loss": 9.703670024871826,
+        "scored_tokens": 1024,
+        "batches": 2,
+        "complete_split": false
+      },
+      "final_validation": {
+        "loss": 9.689332962036133,
+        "scored_tokens": 1024,
+        "batches": 2,
+        "complete_split": false
+      },
+      "history": [
+        {
+          "step": 1,
+          "loss": 9.711868286132812,
+          "learning_rate": 0.00015,
+          "gradient_norm_before_clip": 0.5481652617454529,
+          "data_offset_before": 0,
+          "data_offset_after": 512,
+          "target_tokens": 512
+        },
+        {
+          "step": 2,
+          "loss": 9.711235046386719,
+          "learning_rate": 0.0003,
+          "gradient_norm_before_clip": 0.4932062327861786,
+          "data_offset_before": 512,
+          "data_offset_after": 1024,
+          "target_tokens": 512
+        },
+        {
+          "step": 3,
+          "loss": 9.703782081604004,
+          "learning_rate": 0.0002819134295108992,
+          "gradient_norm_before_clip": 0.5080645084381104,
+          "data_offset_before": 1024,
+          "data_offset_after": 1536,
+          "target_tokens": 512
+        },
+        {
+          "step": 4,
+          "loss": 9.697593688964844,
+          "learning_rate": 0.00023249999999999999,
+          "gradient_norm_before_clip": 0.5926719307899475,
+          "data_offset_before": 1536,
+          "data_offset_after": 2048,
+          "target_tokens": 512
+        },
+        {
+          "step": 5,
+          "loss": 9.690051078796387,
+          "learning_rate": 0.000165,
+          "gradient_norm_before_clip": 0.6817389130592346,
+          "data_offset_before": 2048,
+          "data_offset_after": 2560,
+          "target_tokens": 512
+        },
+        {
+          "step": 6,
+          "loss": 9.692679405212402,
+          "learning_rate": 9.750000000000003e-05,
+          "gradient_norm_before_clip": 0.743726372718811,
+          "data_offset_before": 2560,
+          "data_offset_after": 3072,
+          "target_tokens": 512
+        },
+        {
+          "step": 7,
+          "loss": 9.6954345703125,
+          "learning_rate": 4.808657048910077e-05,
+          "gradient_norm_before_clip": 0.742469072341919,
+          "data_offset_before": 3072,
+          "data_offset_after": 3584,
+          "target_tokens": 512
+        },
+        {
+          "step": 8,
+          "loss": 9.689475059509277,
+          "learning_rate": 2.9999999999999997e-05,
+          "gradient_norm_before_clip": 0.9330357909202576,
+          "data_offset_before": 3584,
+          "data_offset_after": 4096,
+          "target_tokens": 512
+        }
+      ],
+      "data_state": {
+        "identity": {
+          "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+          "split": "train",
+          "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+          "tokens": 7323284
+        },
+        "offset": 4096,
+        "context": 512,
+        "batch_size": 1,
+        "epoch": 0
+      },
+      "validation_identity": {
+        "bin_sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+        "split": "validation",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 385550
+      },
+      "training_loop_seconds": 1.8021293000001606,
+      "resume_from": null,
+      "checkpoint": "C:\\Development\\personal\\helixdepth\\artifacts\\cp3_smoke\\helixdepth\\uninterrupted\\latest.pt",
+      "model_parameters": 589420,
+      "scope": "Short reliability run; validation is partial and losses are not a benchmark result",
+      "interruption_step": 4,
+      "fresh_process_resume": true,
+      "resume_exact_match": true,
+      "compared": [
+        "model",
+        "optimizer",
+        "scheduler",
+        "history",
+        "random_states",
+        "data_position",
+        "next_random_draws",
+        "next_batch"
+      ],
+      "resumed_checkpoint": "C:\\Development\\personal\\helixdepth\\artifacts\\cp3_smoke\\helixdepth\\resumed\\latest.pt"
+    }
+  ],
+  "identical_data_order": true,
+  "tokenizer_fixed": true,
+  "gpu_profile": "Prepared, not executed; no GPU rented",
+  "final_training_token_budget": null,
+  "limitations": [
+    "Smoke models retain vocabulary/context/six stored blocks but reduce width/FFN/rank",
+    "Float32 only; full-size training and GPU resume are unvalidated",
+    "Validation loss covers only the configured validation prefix",
+    "Single-pass training; corpus expansion needed before main experiment"
+  ]
+}

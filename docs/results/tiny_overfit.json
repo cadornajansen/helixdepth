@@ -1,0 +1,114 @@
+[
+  {
+    "variant": "baseline",
+    "seed": 2026,
+    "threads": 1,
+    "device": "cpu",
+    "steps": 100,
+    "config": {
+      "variant": "baseline",
+      "vocab_size": 32,
+      "max_context": 16,
+      "width": 32,
+      "heads": 4,
+      "ffn_width": 64,
+      "base_blocks": 2,
+      "stages": 2,
+      "rank": 4,
+      "depth_width": 8,
+      "hyper_width": 16,
+      "norm_eps": 1e-06,
+      "rope_theta": 10000.0
+    },
+    "optimizer": "AdamW",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0,
+    "gradient_clip": 1.0,
+    "initial_loss": 3.4906632900238037,
+    "final_loss": 0.0019038007594645023,
+    "history": [
+      {
+        "step": 0,
+        "loss": 3.4906632900238037
+      },
+      {
+        "step": 20,
+        "loss": 0.21400220692157745
+      },
+      {
+        "step": 40,
+        "loss": 0.009675472974777222
+      },
+      {
+        "step": 60,
+        "loss": 0.0033721697982400656
+      },
+      {
+        "step": 80,
+        "loss": 0.002353471238166094
+      },
+      {
+        "step": 100,
+        "loss": 0.0019038007594645023
+      }
+    ],
+    "threshold": "final < 0.2 and final < 10% of initial",
+    "passed": true
+  },
+  {
+    "variant": "helixdepth",
+    "seed": 2026,
+    "threads": 1,
+    "device": "cpu",
+    "steps": 100,
+    "config": {
+      "variant": "helixdepth",
+      "vocab_size": 32,
+      "max_context": 16,
+      "width": 32,
+      "heads": 4,
+      "ffn_width": 64,
+      "base_blocks": 2,
+      "stages": 4,
+      "rank": 4,
+      "depth_width": 8,
+      "hyper_width": 16,
+      "norm_eps": 1e-06,
+      "rope_theta": 10000.0
+    },
+    "optimizer": "AdamW",
+    "learning_rate": 0.01,
+    "weight_decay": 0.0,
+    "gradient_clip": 1.0,
+    "initial_loss": 3.4882090091705322,
+    "final_loss": 0.0019992694724351168,
+    "history": [
+      {
+        "step": 0,
+        "loss": 3.4882090091705322
+      },
+      {
+        "step": 20,
+        "loss": 0.2588527500629425
+      },
+      {
+        "step": 40,
+        "loss": 0.01135286409407854
+      },
+      {
+        "step": 60,
+        "loss": 0.0037096738815307617
+      },
+      {
+        "step": 80,
+        "loss": 0.002509739948436618
+      },
+      {
+        "step": 100,
+        "loss": 0.0019992694724351168
+      }
+    ],
+    "threshold": "final < 0.2 and final < 10% of initial",
+    "passed": true
+  }
+]

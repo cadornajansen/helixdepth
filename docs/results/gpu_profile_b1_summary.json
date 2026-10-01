@@ -1,0 +1,98 @@
+{
+  "profile_source": "artifacts\\downloaded_profile\\profile_b1.json",
+  "profile_sha256": "ac901b076884bfe0bf6d188ccb95768bf195ce2d7cd6ebdd24e7efd5b735b160",
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.8.0+cu128",
+  "cuda_runtime": "12.8",
+  "context": 512,
+  "precision": "float32",
+  "main_training_started": false,
+  "scope": "Short GPU profile of fresh full models, not a main run or language-quality evaluation",
+  "runs": [
+    {
+      "variant": "baseline",
+      "batch_size": 1,
+      "status": "passed",
+      "parameters": 40968320,
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 4.744844203814864,
+          "target_tokens": 51200,
+          "tokens_per_second": 10790.659882749174
+        },
+        {
+          "seconds": 4.700893377885222,
+          "target_tokens": 51200,
+          "tokens_per_second": 10891.546751701311
+        },
+        {
+          "seconds": 4.789021074771881,
+          "target_tokens": 51200,
+          "tokens_per_second": 10691.120210290335
+        }
+      ],
+      "completed_steps": 320,
+      "target_tokens": 153600,
+      "wall_seconds": 14.234758656471968,
+      "training_tokens_per_second": 10790.488529298971,
+      "timing_cv": 0.0075825764919295845,
+      "timing_stable": false,
+      "peak_allocated_bytes": 850584064,
+      "peak_reserved_bytes": 929038336,
+      "finite_losses_and_gradients": true,
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 10240,
+      "end_offset": 163840
+    },
+    {
+      "variant": "helixdepth",
+      "batch_size": 1,
+      "status": "passed",
+      "parameters": 41184432,
+      "warmup_steps": 20,
+      "steps_per_window": 100,
+      "windows": [
+        {
+          "seconds": 11.893688406795263,
+          "target_tokens": 51200,
+          "tokens_per_second": 4304.80421622175
+        },
+        {
+          "seconds": 11.906437249854207,
+          "target_tokens": 51200,
+          "tokens_per_second": 4300.194837933315
+        },
+        {
+          "seconds": 11.915987616404891,
+          "target_tokens": 51200,
+          "tokens_per_second": 4296.748339139956
+        }
+      ],
+      "completed_steps": 320,
+      "target_tokens": 153600,
+      "wall_seconds": 35.71611327305436,
+      "training_tokens_per_second": 4300.579932248167,
+      "timing_cv": 0.0007673844141904138,
+      "timing_stable": true,
+      "peak_allocated_bytes": 1038280192,
+      "peak_reserved_bytes": 1145044992,
+      "finite_losses_and_gradients": true,
+      "data_identity": {
+        "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+        "split": "train",
+        "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+        "tokens": 7323284
+      },
+      "start_offset": 10240,
+      "end_offset": 163840
+    }
+  ],
+  "baseline_timing_failure_reason": "All three windows shorter than five seconds; throughput CV passes 10% limit"
+}

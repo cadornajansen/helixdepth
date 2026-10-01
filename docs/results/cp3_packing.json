@@ -1,0 +1,25 @@
+{
+  "format": "little-endian-int32",
+  "vocab_size": 16384,
+  "eos_id": 2,
+  "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+  "source_revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "splits": {
+    "train": {
+      "tokens": 7323284,
+      "documents": 8458,
+      "source_tokens_sha256": "38593c298b88ab49db8ed60ba875296e0b1d37b667cbc09bb3d04f9161fe58e1",
+      "bin_sha256": "73fced894ba069835690b9c2f6f48f3d0a072f2f4153841d0e88ae08f223253b",
+      "index_sha256": "d4796ddd33a482490a5358b61aabe269de9e9b986cdc3981144b4f01cc5623b3"
+    },
+    "validation": {
+      "tokens": 385550,
+      "documents": 443,
+      "source_tokens_sha256": "c61acef798d52c4592ef499caaf1012add240b82b453acd3050a4372661358fa",
+      "bin_sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+      "index_sha256": "bc9caf9901df91774d85f7b896729201c24b8d604f842b7323c78203fa59fc40"
+    }
+  },
+  "order": "Saved CP2 JSONL row order; no shuffle, no implicit epochs",
+  "packing": "Concatenate document IDs including one EOS each; windows use stride=context with one-token input/target shift"
+}

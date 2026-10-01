@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "independent_source_reads": 2,
+  "same_seed": 2026,
+  "matching_artifact_sha256": {
+    "train.jsonl": true,
+    "validation.jsonl": true,
+    "tokenizer.json": true,
+    "train.tokens.jsonl": true,
+    "validation.tokens.jsonl": true,
+    "tokenizer_training.json": true,
+    "source_card.md": true
+  },
+  "split_counts_match": true,
+  "note": "Manifests differ in output directory; document, tokenizer, token files and fitting provenance match byte for byte."
+}
