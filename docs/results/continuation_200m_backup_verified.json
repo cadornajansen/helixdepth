@@ -1,0 +1,15 @@
+{
+  "verified": true,
+  "models": {
+    "baseline": {
+      "model.pt": "4ffdbae369121278cb1896b10a8d61025f3350174af0162a1f09a3cbdf9fa29b",
+      "latest.pt": "b2508719b9328ed74c2e1f78800e84a3da3a4cd00618475d9ca61e5a0be0b41c",
+      "best.pt": "4ffdbae369121278cb1896b10a8d61025f3350174af0162a1f09a3cbdf9fa29b"
+    },
+    "helixdepth": {
+      "model.pt": "04a10bda046623787664d36ce6410962a3abe1ab23351724b124f0303137c187",
+      "latest.pt": "b8b6c3f1857ba7744ff9e5778176d24d55486ba25508258c8ec310d00936c2fc",
+      "best.pt": "04a10bda046623787664d36ce6410962a3abe1ab23351724b124f0303137c187"
+    }
+  }
+}

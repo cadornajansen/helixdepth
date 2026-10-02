@@ -1,0 +1,169 @@
+{
+  "variant": "baseline",
+  "complete_schedule": true,
+  "step": 12206,
+  "target_tokens": 99991552,
+  "config": {
+    "context": 512,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "warmup_steps": 244,
+    "schedule_steps": 12206,
+    "minimum_lr_fraction": 0.1,
+    "seed": 2026,
+    "deterministic": true,
+    "cpu_threads": 1,
+    "validation_batches": 64,
+    "checkpoint_every": 500,
+    "precision": "float32"
+  },
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "python": "3.12.13 (main, Jun 23 2026, 15:18:55) [Clang 22.1.3 ]",
+    "device_type": "cuda",
+    "precision": "float32",
+    "deterministic": true,
+    "cpu_threads": 1,
+    "attention": "math"
+  },
+  "initial_validation_prefix": {
+    "loss": 9.826508939266205,
+    "scored_tokens": 32768,
+    "batches": 64,
+    "complete_split": false
+  },
+  "periodic_validation_prefix": [
+    {
+      "step": 1000,
+      "loss": 5.298199579119682,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 2000,
+      "loss": 4.901099868118763,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 3000,
+      "loss": 4.676049817353487,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 4000,
+      "loss": 4.469087902456522,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 5000,
+      "loss": 4.3365046717226505,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 6000,
+      "loss": 4.244325537234545,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 7000,
+      "loss": 4.183568559587002,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 8000,
+      "loss": 4.113565370440483,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 9000,
+      "loss": 4.064236927777529,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 10000,
+      "loss": 4.030451212078333,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 11000,
+      "loss": 4.003000907599926,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    },
+    {
+      "step": 12000,
+      "loss": 3.9838572777807713,
+      "scored_tokens": 32768,
+      "batches": 64,
+      "complete_split": false
+    }
+  ],
+  "final_validation_full": {
+    "loss": 3.9726352410605763,
+    "scored_tokens": 385549,
+    "batches": 754,
+    "complete_split": true
+  },
+  "training_step_seconds_this_process": 1195.810462769121,
+  "wall_seconds_this_process": 1251.388362325728,
+  "resumed_from": null,
+  "data": {
+    "identity": {
+      "bin_sha256": "6b51a55e42ef2da46a7f5f0f87bfa323026bc899d94c24633c199b544c5c34b4",
+      "split": "train",
+      "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+      "tokens": 99999146
+    },
+    "offset": 99991552,
+    "context": 512,
+    "batch_size": 16,
+    "epoch": 0
+  },
+  "validation_identity": {
+    "bin_sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+    "split": "validation",
+    "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+    "tokens": 385550
+  },
+  "model_parameters": 40968320,
+  "peak_allocated_bytes": 5918689792,
+  "peak_reserved_bytes": 6224347136,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "files": {
+    "latest.pt": {
+      "sha256": "e83d131659ef3d991ac848139f21e33d4b93c2dc0554014e59e6066f1e5f80a4",
+      "bytes": 492713339
+    },
+    "model.pt": {
+      "sha256": "c9a0a99790a8481bf73e5d3f0cfe01e1a94de13935847c6f133366849a93d5cf",
+      "bytes": 163891903
+    },
+    "progress.jsonl": {
+      "sha256": "197f804a67a1f73ea08f32ba11c251818fbae2d045136660ae403c1f258d2ddc",
+      "bytes": 2651139
+    }
+  },
+  "scope": "One matched corpus pass; validation is FineWeb-Edu, not a benchmark accuracy score"
+}

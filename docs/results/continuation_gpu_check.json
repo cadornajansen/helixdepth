@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "device": "cuda",
+  "fresh_process_exact_resume": true,
+  "parent_sha256": "0919385e31f75ced83f3530437906c39ab18380235e2072376bf1d6071fe139e",
+  "scope": "Discarded 4-update mechanics fixture; no capability claim"
+}

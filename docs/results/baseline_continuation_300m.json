@@ -1,0 +1,54 @@
+{
+  "stage": "baseline additional training",
+  "stop_reason": "schedule_complete",
+  "step": 12206,
+  "schedule_steps": 12206,
+  "stage_targets": 99991552,
+  "cumulative_targets": 299982848,
+  "selected": {
+    "stage_step": 12206,
+    "full_validation_loss": 3.747605739454087
+  },
+  "wall_seconds_this_process": 1330.9675459861755,
+  "peak_allocated_bytes": 5918689792,
+  "files": {
+    "model.pt": {
+      "sha256": "bb529fe34a30cf11ef89717724513765cc246d2cf58f6dc6511b0b6ce7401d47",
+      "bytes": 163895163
+    },
+    "latest.pt": {
+      "sha256": "6cd73facf1017f8ed76873036ac15dd8336a075f93129eb9473fbc0b3730edbb",
+      "bytes": 492713339
+    },
+    "best.pt": {
+      "sha256": "bb529fe34a30cf11ef89717724513765cc246d2cf58f6dc6511b0b6ce7401d47",
+      "bytes": 163895163
+    }
+  },
+  "identity": {
+    "parent_sha256": "b2508719b9328ed74c2e1f78800e84a3da3a4cd00618475d9ca61e5a0be0b41c",
+    "parent_targets": 199991296,
+    "parent_report_sha256": "39aaaddd9578c9307ef3419c64cbf028f643555edf3194913960a368d9ba3139",
+    "data_manifest_sha256": "8107816ca3fc627aabf149d80717519c68152a4a63f5a22ac63441fbceecc68e",
+    "config": {
+      "context": 512,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.1,
+      "gradient_clip": 1.0,
+      "warmup_steps": 244,
+      "schedule_steps": 12206,
+      "minimum_lr_fraction": 0.1,
+      "seed": 2026,
+      "deterministic": true,
+      "cpu_threads": 1,
+      "validation_batches": 64,
+      "checkpoint_every": 500,
+      "precision": "float32"
+    },
+    "deadline_unix": 1790930661.0,
+    "optimizer": "New AdamW state; weights-only stage initialization",
+    "runner_sha256": "feda613c72ee1f79a1b2998dccdc642e26c68b8eeb135992eb494453d0315b5b",
+    "training_sha256": "b2f894dd8f5ee3c20de237508d094206242e8f8a2cce3bc000098dc2c8a98d13"
+  }
+}

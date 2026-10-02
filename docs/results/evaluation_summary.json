@@ -1,0 +1,190 @@
+{
+  "verified_on": "2026-10-02",
+  "provenance": {
+    "format": 1,
+    "models": {
+      "baseline": "c9a0a99790a8481bf73e5d3f0cfe01e1a94de13935847c6f133366849a93d5cf",
+      "helixdepth": "79d6464dd95bd2d92ca67c113e4e1637aae27cb626a82c83e5c29515db56c3c5"
+    },
+    "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+    "batch_size": 16,
+    "device": "cuda",
+    "wikitext_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "sources": {
+      "scripts/evaluate_model.py": "100641eed248799abcd32646285939994bd596f20467a2e033bdb1442ad3cdc5",
+      "scripts/evaluate_suite.py": "032af50013370904fb5b4fddbe81cf2475bc6ba3c7b5832db9c1600244a35f82",
+      "src/helixdepth/__init__.py": "0c4d387f86bd5d208ce602170d0714c098a6cbd31620c3dc209dc43209fb8a6c",
+      "src/helixdepth/config.py": "e61aac0d380e697307fa1b743eaedb7fbf25c08f7a5538c3d46ba8fce184f288",
+      "src/helixdepth/data.py": "312a6eff63a5c182aa3b304b677ce6800262dce4c95ae4a40925b77eb1b2d6ae",
+      "src/helixdepth/evaluation.py": "533f32c271245edb17e27fd7002ffb350b0d51f489891893d2f8f30b78457ef0",
+      "src/helixdepth/expansion.py": "00b846eada096a75e0d4f7e9eab7b8d586fa007d9912501f687a09b91b0ef465",
+      "src/helixdepth/hypernetwork.py": "adb44c214722ef4dc5e3faa933b919327f0ee89bcc66b0403c17cb8e21c6e0e4",
+      "src/helixdepth/model.py": "50156253b1aea098f809389677a863226770da2964619bb44d974f5abdf94c88",
+      "src/helixdepth/packing.py": "75505a24e76d164933cf58bd1f66e1f43ef9e81344b92ec3f1c20fcc2fcf0476",
+      "src/helixdepth/profiling.py": "5d20cf931a2e7ff0ba0c65ef385547aaa0dc4fde334e7620e212a576a0373e58",
+      "src/helixdepth/training.py": "b2f894dd8f5ee3c20de237508d094206242e8f8a2cce3bc000098dc2c8a98d13"
+    },
+    "packages": {
+      "lm_eval": "0.4.13",
+      "torch": "2.8.0+cu128",
+      "datasets": "5.0.1",
+      "tokenizers": "0.23.2",
+      "PyYAML": "6.0.2",
+      "numpy": "2.5.3"
+    }
+  },
+  "verification": "All ten receipt/result hashes, full sample counts, sources, tokenizer and local model backups match.",
+  "models": {
+    "baseline": {
+      "hellaswag": {
+        "metrics": {
+          "name": "hellaswag",
+          "alias": "hellaswag",
+          "sample_len": 10042,
+          "acc,none": 0.2640908185620394,
+          "acc_stderr,none": 0.0043994691682725275,
+          "acc_norm,none": 0.26558454491137223,
+          "acc_norm_stderr,none": 0.004407413723383586
+        },
+        "result_sha256": "652b24a2ea50b05b8f444c5e2fb154cd8400635993f309c2f07276e714106939",
+        "source": "artifacts/downloaded_evaluation_recovery/baseline_hellaswag/attempt-1/hellaswag.json"
+      },
+      "arc_easy": {
+        "metrics": {
+          "name": "arc_easy",
+          "alias": "arc_easy",
+          "sample_len": 2376,
+          "acc,none": 0.33796296296296297,
+          "acc_stderr,none": 0.009706080538632695,
+          "acc_norm,none": 0.33164983164983164,
+          "acc_norm_stderr,none": 0.00966073378092379
+        },
+        "result_sha256": "b9982811d8dd91aa4d673fb9c698b0a34cc0042f64fa8f861cbbfe7ab8c84207",
+        "source": "artifacts/downloaded_evaluation_recovery/baseline_arc_easy/attempt-1/arc_easy.json"
+      },
+      "piqa": {
+        "metrics": {
+          "name": "piqa",
+          "alias": "piqa",
+          "sample_len": 1838,
+          "acc,none": 0.5565832426550599,
+          "acc_stderr,none": 0.011590883373666913,
+          "acc_norm,none": 0.5424374319912949,
+          "acc_norm_stderr,none": 0.011623729421517952
+        },
+        "result_sha256": "d7bb1d58b62c1e68c265b04823ebcf3fb338670325e3c244073d1e6159cd0415",
+        "source": "artifacts/downloaded_evaluation_recovery/baseline_piqa/attempt-1/piqa.json"
+      },
+      "winogrande": {
+        "metrics": {
+          "name": "winogrande",
+          "alias": "winogrande",
+          "sample_len": 1267,
+          "acc,none": 0.4996053670086819,
+          "acc_stderr,none": 0.01405248130604961
+        },
+        "result_sha256": "6b3a4b53252ab8b2ea2686d7bcecbd9bc62f561896f653b5797a44523a8e64a2",
+        "source": "artifacts/downloaded_evaluation_recovery/baseline_winogrande/attempt-1/winogrande.json"
+      },
+      "wikitext103": {
+        "metrics": {
+          "dataset": "Salesforce/wikitext",
+          "configuration": "wikitext-103-raw-v1",
+          "split": "test",
+          "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+          "rows": 4358,
+          "joined_text_sha256": "aca2f46735043bcfd0a44eca981d04627b9cdf74c4c9a04bf0856d04066f58fc",
+          "slice": "First 262144 own-tokenizer tokens from newline-joined test rows; no EOS appended",
+          "available_tokens": 323359,
+          "scored_tokens": 262144,
+          "prefix_token_id": 2,
+          "window": 512,
+          "mean_token_nll": 4.768015588633716,
+          "token_perplexity": 117.68547369953035,
+          "note": "Own-tokenizer perplexity; not directly comparable across different tokenizers"
+        },
+        "result_sha256": "4800a9eb8f8f2f689328cb853da59b12a6dad1ef8f6704102fc5c9d7649dcf6a",
+        "source": "artifacts/downloaded_evaluation_recovery/baseline_wikitext103/attempt-1/wikitext103.json"
+      }
+    },
+    "helixdepth": {
+      "hellaswag": {
+        "metrics": {
+          "name": "hellaswag",
+          "alias": "hellaswag",
+          "sample_len": 10042,
+          "acc,none": 0.2638916550487951,
+          "acc_stderr,none": 0.004398404992933761,
+          "acc_norm,none": 0.2671778530173272,
+          "acc_norm_stderr,none": 0.004415816696302843
+        },
+        "result_sha256": "9f05960ced763e914f95be3282d9623230a839a52f3a6dfb9ff512f51016b343",
+        "source": "artifacts/downloaded_evaluation_recovery/helixdepth_hellaswag/attempt-1/hellaswag.json"
+      },
+      "arc_easy": {
+        "metrics": {
+          "name": "arc_easy",
+          "alias": "arc_easy",
+          "sample_len": 2376,
+          "acc,none": 0.33796296296296297,
+          "acc_stderr,none": 0.009706080538632695,
+          "acc_norm,none": 0.33375420875420875,
+          "acc_norm_stderr,none": 0.009676065683575515
+        },
+        "result_sha256": "dc35ab876876c5ed09ac145f6328be2918ca344b0f19730338d18e3b4d40c956",
+        "source": "artifacts/downloaded_evaluation_recovery/helixdepth_arc_easy/attempt-1/arc_easy.json"
+      },
+      "piqa": {
+        "metrics": {
+          "name": "piqa",
+          "alias": "piqa",
+          "sample_len": 1838,
+          "acc,none": 0.5647442872687704,
+          "acc_stderr,none": 0.011567608588759519,
+          "acc_norm,none": 0.5495103373231773,
+          "acc_norm_stderr,none": 0.011608491028638193
+        },
+        "result_sha256": "b512e61c579565f640e1e20b8dbfd1060bf845206fdb420dd267b66bde756442",
+        "source": "artifacts/downloaded_evaluation_recovery/helixdepth_piqa/attempt-1/piqa.json"
+      },
+      "winogrande": {
+        "metrics": {
+          "name": "winogrande",
+          "alias": "winogrande",
+          "sample_len": 1267,
+          "acc,none": 0.5035516969218626,
+          "acc_stderr,none": 0.014052131146915852
+        },
+        "result_sha256": "0dbc50d309baffc63b4d5d4560861b8020d263398173efb603e2a7793315e56f",
+        "source": "artifacts/downloaded_evaluation_recovery/helixdepth_winogrande/attempt-1/winogrande.json"
+      },
+      "wikitext103": {
+        "metrics": {
+          "dataset": "Salesforce/wikitext",
+          "configuration": "wikitext-103-raw-v1",
+          "split": "test",
+          "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+          "rows": 4358,
+          "joined_text_sha256": "aca2f46735043bcfd0a44eca981d04627b9cdf74c4c9a04bf0856d04066f58fc",
+          "slice": "First 262144 own-tokenizer tokens from newline-joined test rows; no EOS appended",
+          "available_tokens": 323359,
+          "scored_tokens": 262144,
+          "prefix_token_id": 2,
+          "window": 512,
+          "mean_token_nll": 4.739316137507558,
+          "token_perplexity": 114.35597117428026,
+          "note": "Own-tokenizer perplexity; not directly comparable across different tokenizers"
+        },
+        "result_sha256": "bbf1bb4004be1b71522164944b7015ecfd0bbc1d1c86dfc27d08274b946041f0",
+        "source": "artifacts/downloaded_evaluation_recovery/helixdepth_wikitext103/attempt-1/wikitext103.json"
+      }
+    }
+  },
+  "perplexity_relative_reduction_percent": 2.829153353072988,
+  "limitations": [
+    "One training seed per architecture; no statistical significance established.",
+    "Accuracy differences are small; no broad reasoning superiority established.",
+    "Own-tokenizer perplexity is not directly comparable across tokenizers.",
+    "HelixDepth uses more training time and peak allocated memory than this baseline."
+  ]
+}

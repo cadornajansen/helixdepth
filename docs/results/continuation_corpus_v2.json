@@ -1,0 +1,111 @@
+{
+  "format": "little-endian-int32",
+  "vocab_size": 16384,
+  "eos_id": 2,
+  "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+  "source_revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "source_settings": {
+    "dataset_id": "HuggingFaceFW/fineweb-edu",
+    "dataset_config": "sample-10BT",
+    "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+    "source_split": "train",
+    "text_column": "text",
+    "seed": 2026,
+    "candidate_documents": 20000,
+    "max_documents": 10000,
+    "max_text_bytes": 33554432,
+    "min_document_bytes": 200,
+    "max_document_bytes": 20000,
+    "validation_per_mille": 50,
+    "excluded_domains": [
+      "wikipedia.org",
+      "huggingface.co",
+      "github.com"
+    ],
+    "vocab_size": 16384,
+    "min_pair_frequency": 2,
+    "special_tokens": [
+      "<pad>",
+      "<bos>",
+      "<eos>",
+      "<unk>"
+    ],
+    "output_dir": "artifacts/cp2"
+  },
+  "parent_manifest_sha256": "84a8c807eae3d387c4d09247d83b1870e0ffffb9eb64ec6e55432af6011c2757",
+  "source_start_index": 249697,
+  "previous_manifest_sha256": "f56183df0555c6d3281d867bd2368c42dcd3a30a7c2f286e0918906064a294a0",
+  "audit_index_note": "source_index is relative to source_start_index",
+  "splits": {
+    "train": {
+      "tokens": 99999461,
+      "text_tokens": 99885758,
+      "documents": 113703,
+      "text_bytes": 432787995,
+      "stop_reason": "first_document_exceeding_capacity",
+      "bin_sha256": "7b1df786edb23014fb01e3a780f6e7b19e1c33e0f2b8f46bdffee67b12fa5a53",
+      "index_sha256": "ee526bfa5e91063473d9650591fb6a8b9c148ce8a34d9c9f7a4d8463945b1554"
+    },
+    "validation": {
+      "tokens": 385550,
+      "text_tokens": 385107,
+      "documents": 443,
+      "text_bytes": 1693522,
+      "stop_reason": "source_bound_or_exhaustion",
+      "bin_sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+      "index_sha256": "bc9caf9901df91774d85f7b896729201c24b8d604f842b7323c78203fa59fc40"
+    }
+  },
+  "selection_counts": {
+    "scanned_documents": 123985,
+    "eligible_train": 113771,
+    "reserved_validation": 6204,
+    "excluded_domain": 809,
+    "excluded_length": 3100,
+    "duplicate_or_existing": 101,
+    "excluded_prior_audit": 67
+  },
+  "fresh_verified": true,
+  "limitations": [
+    "Exact canonical hashes and source IDs excluded across old corpus and audit; near duplicates not exhaustively excluded",
+    "Domain exclusions do not prove benchmark decontamination"
+  ],
+  "files": {
+    "source_card.md": {
+      "sha256": "a0cc8998a20499432b28b6575f3046b714938eb8e11b8d59a1d25ddf3716061e",
+      "bytes": 26354
+    },
+    "validation.jsonl": {
+      "sha256": "177ce3ee31527b1fb9ca7f3b735264cad386329764bcd5a837d5947a9310c509",
+      "bytes": 1929281
+    },
+    "validation.index.jsonl": {
+      "sha256": "bc9caf9901df91774d85f7b896729201c24b8d604f842b7323c78203fa59fc40",
+      "bytes": 51818
+    },
+    "validation.bin": {
+      "sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+      "bytes": 1542200
+    },
+    "tokenizer.json": {
+      "sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+      "bytes": 1137470
+    },
+    "train.bin": {
+      "sha256": "7b1df786edb23014fb01e3a780f6e7b19e1c33e0f2b8f46bdffee67b12fa5a53",
+      "bytes": 399997844
+    },
+    "train.index.jsonl": {
+      "sha256": "ee526bfa5e91063473d9650591fb6a8b9c148ce8a34d9c9f7a4d8463945b1554",
+      "bytes": 13551328
+    },
+    "train.jsonl": {
+      "sha256": "e7344d8f8878baf892aa90998e90c66280fe813de87189795cee77603fb15927",
+      "bytes": 492905577
+    },
+    "selection_audit.jsonl": {
+      "sha256": "941955d669bcc06ff90da2af7caf0327e65f68aefc7d5145248229b19014eb4f",
+      "bytes": 55924966
+    }
+  }
+}

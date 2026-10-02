@@ -1,0 +1,20 @@
+{
+  "verified": true,
+  "verified_at_utc": "2026-10-02T06:11:20.283761+00:00",
+  "backup_root": "artifacts/backups/continuation_300m",
+  "manifest_sha256": "7ceee7b0248b8c45abbb937287d4fb538b03bc8228250066cf65c521f3c68954",
+  "files_verified": 16,
+  "total_bytes": 1651852647,
+  "models": {
+    "baseline": {
+      "cumulative_targets": 299982848,
+      "full_validation_loss": 3.747605739454087,
+      "model_sha256": "bb529fe34a30cf11ef89717724513765cc246d2cf58f6dc6511b0b6ce7401d47"
+    },
+    "helixdepth": {
+      "cumulative_targets": 299982848,
+      "full_validation_loss": 3.693469938283724,
+      "model_sha256": "e4d83c74ab6bd88c8026dd8533ccd0f6ab9ad5eafe620c92d19b55e747e99518"
+    }
+  }
+}

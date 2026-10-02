@@ -1023,3 +1023,304 @@ matched runs, checksum-verified backups, required benchmark results, and an
 accurate explanation/demo. Recovery loss alone does not establish model quality.
 Full changed-file inventory is available in the publication commit; preparation
 file purposes are recorded in the preceding main-package entry.
+
+## 2026-10-02 — Main backups verified; required evaluation next
+
+Read actual downloaded metrics rather than screenshot estimates. Both local
+backups passed scripts/verify_transfer.py:3 manifest-listed files each (model,
+recovery checkpoint,progress). Reports copied to docs/results/main_baseline.json
+and main_helixdepth.json. Both completed12206updates/99991552targets with identical
+config,data identity and final offset. Full validation385549targets: baseline
+loss3.9726352410605763; HelixDepth3.9181522866479055. Wall times1251.388s and2637.053s;
+training-step times1195.810s and2543.871s. These are FineWeb-Edu validation results,
+not external benchmark scores or proof of statistical significance.
+
+Next: user runs required evaluation on existing active Pod. No remote execution
+by assistant. Keep Pod active per user instruction. Optional evaluation lock is
+already inside v2 package. Pin WikiText103 revision to
+b08601e04326c79dfdd32d625aee71d232d685c3 (resolved from Hugging Face dataset API).
+Evaluate both exports at zero-shot with same tokenizer/batch16/tasks/slice.
+No completed external evaluation claimed. Current local Python path exists;
+original screenshot's failed invocation did not indicate corrupted checkpoints.
+
+## 2026-10-02 — Evaluation duplicate launch diagnostics
+
+User launched the evaluator twice with the same output path/log. One process
+failed creating artifacts/eval_baseline while PID4721 remained alive with GPU
+memory allocated. No benchmark completion established. Repeated tail output
+only repeated the existing error; it did not prove a new failure. Actual reason
+for the surviving process's silent wait remains unknown.
+
+Modified scripts/evaluate_model.py only: explicit model-load/task-start/completion
+messages and repeating180-second Python stack diagnostics. Stack diagnostics do
+not terminate evaluation. CLI --help checked locally. Prepared user-run controlled
+restart with preserved old folders/log, separate outputs, and flock preventing
+concurrent duplicate launch. User alone executes remote commands. No weights,
+scoring protocol or dependencies changed. Existing v2 transfer manifest describes
+the original package; uploaded diagnostic script is a subsequent source change.
+
+### 2026-10-02 02:33 UTC+8 — Isolated benchmark retry prepared
+Screenshot evidence confirms the baseline HellaSwag result was saved as artifacts/eval_v2_baseline/hellaswag.json (about 51 MB). The evaluator then crashed with a segmentation fault during ARC-Easy task setup; ARC-Easy and subsequent tasks did not complete. Cause is not established. Modified scripts/evaluate_model.py to accept a chosen subset via --tasks and optionally skip WikiText with --skip-wikitext, allowing one benchmark per fresh process and a distinct output folder. Existing task ordering/default and scoring settings are preserved. Local CLI help and git diff --check passed. No remote commands or GPU actions performed. Notion entry synchronized; the later recovery runner below supersedes the manual single-task retry plan.
+
+## 2026-10-02 — Evaluation recovery runner prepared
+
+Inspected pinned harness0.4.13 source and Context7 Python API documentation.
+TaskManager default scans the entire catalogue on every simple_evaluate call.
+Restricted unchanged official task discovery to hellaswag/arc/piqa/winogrande
+directories with include_defaults=False; all four resolve locally in0.016s.
+This addresses repeated expensive setup, not a proven native-crash root cause.
+
+Modified scripts/evaluate_model.py: restricted discovery, atomic output writes,
+WikiText-only worker, pinned-version/slice guards and retained fatal diagnostics;
+removed confusing periodic Timeout stack dumps. Added scripts/evaluate_suite.py:
+one child per task/model, OS exclusivity lock, bounded retry/timeouts, heartbeat,
+per-attempt logs, source/input/package identity, checksum-verified task resumption,
+finite metric/full-sample validation and explicit incomplete exit/report.
+No training/model/tokenizer/scoring changes. Legacy HellaSwag remains preserved;
+new suite repeats it to create a fully identity-verified evaluation set.
+
+Created tests/test_evaluation_runner.py and docs/evaluation.md. Nine focused
+tests passed in29.33s, including simulated crash exit139, timeout termination,
+retry/resume/corruption checks and real harness scoring of an offline fixture.
+Evidence: docs/results/evaluation_recovery_tests.xml. Earlier10 targeted tests
+also passed, including existing likelihood/training checks. CLI help and diff
+whitespace checks pass. Tests run locally on Windows/CPU; no remote evaluation
+or real benchmark scores are claimed. User uploads two scripts and executes the
+suite on the already-running Pod. Nothing committed/pushed during this change.
+
+## 2026-10-02 — CP6 completed and downloaded evidence verified
+
+All ten evaluation jobs passed on their first attempt. Verified local result
+receipts/hashes, sample counts, sources, tokenizer and both backed-up model hashes.
+Created docs/results/evaluation_summary.json; updated README.md and
+docs/evaluation.md with scores, limitations and a local verification command.
+WikiText perplexity: baseline 117.685474, HelixDepth 114.355971 (2.829153% lower).
+Raw accuracy baseline/HelixDepth: HellaSwag 26.4091/26.3892%, ARC-Easy
+33.7963/33.7963%, PIQA 55.6583/56.4744%, WinoGrande 49.9605/50.3552%.
+Single-seed differences do not establish broad reasoning superiority. The gain
+cost about 2.1x main-run wall time and higher peak allocated GPU memory.
+No training, remote commands, model upload, commit or push performed in this
+documentation step. Existing implementation changes are preserved.
+
+## 2026-10-02 — Additional training stage prepared and launched
+
+User removed the Codex percentage restriction and 10AM cutoff and authorized
+remote execution. Prepared one fresh ~100M-token HelixDepth continuation with
+a four-hour stage ceiling, preserving the originals and keeping the Pod running.
+Added scripts/prepare_continuation_data.py, scripts/run_continuation.py,
+scripts/check_continuation_gpu.py, scripts/start_continuation.sh and
+tests/test_continuation.py. Added docs/continuation.md and corpus/GPU evidence
+under docs/results; README links the separate protocol.
+
+Twenty-three focused checks passed, followed by all four continuation tests
+after adding the production-runner end-to-end test. Remote discarded GPU
+full-four versus two-plus-two resume matched complete checkpoint state.
+Fresh corpus contains 99,999,958 tokens in 115,077 documents; text re-encoding,
+index checks and original-document exclusions passed. Builder aborted during
+native interpreter shutdown after producing its manifest; an independent
+clean process verified all saved file hashes before launch. No claim of
+exhaustive near-duplicate or benchmark decontamination is made.
+
+Launcher started on the existing Pod; deadline saved as
+2026-10-02T03:36:22+00:00 (11:36:22AM Manila), four hours from launch.
+This replaces the 10AM cutoff. New benchmark scores are pending. No commit,
+push, model publication or Pod stop was performed.
+
+Confirmed live beyond step 600/12,207 with a step-500 recovery checkpoint.
+Full initial validation exactly matched 3.9181522866479055 on 385,549 targets.
+Reran all four continuation tests: passed in 15.30 seconds. Stage identity
+downloaded as docs/results/continuation_stage.json; Notion status updated.
+
+## 2026-10-02 — Baseline continuation preparation
+
+Confirmed remote HelixDepth stage completed with full validation loss
+3.7680845545993455 at step 12,207. Added
+scripts/start_baseline_continuation.sh: verifies original baseline checkpoint,
+fresh-file hashes and equality with HelixDepth's additional-training settings
+and token budget; supports --check-only. Updated scripts/run_continuation.py
+to label metrics with the actual architecture (training behavior unchanged).
+Preserved the previous runner beside the remote HelixDepth stage for provenance.
+Updated tests/test_continuation.py to exercise production continuation/resume
+for both architectures: all five tests passed in 18.15 seconds. Updated
+docs/continuation.md with preparation and launch commands. No baseline training,
+publication, commit or push performed during this preparation scope.
+
+## 2026-10-02 — Verified 200M backups and launched next matched stage
+
+Both previous stages completed at 199,991,296 cumulative targets. Selected
+full-validation losses baseline/HelixDepth: 3.822446083484463 / 3.7680845545993455.
+Downloaded both complete stage directories under artifacts/backups/continuation_200m.
+SSH transfer disconnected; retried incomplete HelixDepth files. Both local
+model/best/recovery checkpoint hashes and sizes passed verification.
+
+Modified scripts/prepare_continuation_data.py to exclude the additional prior
+corpus/audit and advance source offset; scripts/run_continuation.py to verify
+prior stage report and carry cumulative token totals. Added
+scripts/verify_continuation_backup.py and scripts/start_matched_continuation_v2.sh.
+Extended tests/test_continuation.py for repeated-stage exclusion/accounting;
+five tests passed in 14.40s, then the new corruption test passed in 6.98s.
+Preserved baseline's previous runner on the Pod before replacing it.
+
+Fresh v2 corpus: 113,703 documents / 99,999,461 tokens, source start 249,697.
+Builder re-encoding succeeded but native shutdown aborted after output writing;
+launcher's independent hash checks must pass before updates begin. Uploaded
+local backup receipt and launched baseline-then-HelixDepth sequence using one
+common four-hour ceiling. Each adds 99,991,552 targets, intended cumulative
+299,982,848. Outputs v2 are separate; Pod remains running afterward.
+
+Updated README.md and docs/continuation.md. Added docs/results/
+continuation_corpus_v2.json, baseline_continuation_200m.json,
+helixdepth_continuation_200m.json and continuation_200m_backup_verified.json.
+No files deleted, publication, commit, push or Pod stop performed.
+
+Confirmed baseline v2 advancing past step 200/12,206 at 95% GPU utilization.
+Full starting validation exactly matched 3.822446083484463 over 385,549 targets.
+Common ceiling recorded as 2026-10-02T08:44:21+00:00 (4:44:21PM Manila).
+Downloaded docs/results/baseline_continuation_v2_stage.json. Syntax and diff
+checks passed. HelixDepth v2 is queued in the same sequential launcher.
+
+## 2026-10-02 — Verified 300M backups, completed evaluation, stopped for review
+
+Scope: back up the finished matched stages, evaluate both selected models,
+verify downloaded evidence and update documentation. No new training or data
+collection was authorized in this scope, and none was launched.
+
+Both models completed 299,982,848 cumulative targets / 36,619 updates. Their
+selected final-stage step is 12,206. Full validation losses are baseline
+3.747605739454087 and HelixDepth 3.693469938283724. The same 385,549 targets
+were scored in 754 batches. Three-stage wall timers total 3920.051996 seconds
+for baseline and 8253.404434 seconds for HelixDepth; peak allocated memory
+maxima are 5,918,689,792 and 9,685,880,320 bytes. These timers exclude setup,
+profiling, corpus preparation, external evaluation and idle time.
+
+Downloaded 16 model/training/tokenizer files (1,651,852,647 bytes) into the new
+artifacts/backups/continuation_300m directory. It includes both exports, best
+models, resumable checkpoints, metrics, stage identities, progress logs, corpus
+manifest, tokenizer and launcher log/deadline. Remote hashes were independently
+compared with training reports, then local sizes/SHA-256 values were verified
+using scripts/verify_transfer.py. Verification completed at 06:11:20 UTC.
+Earlier 200M backups remain intact; no corpus dataset was downloaded.
+
+Launched the unchanged scripts/evaluate_suite.py at 06:12:05 UTC, with batch 16,
+CUDA, two attempts maximum per job, a 1200-second worker timeout, pinned harness
+0.4.13 and the original WikiText revision/slice. Model staging symlinks pointed
+to the v2 exports; output was artifacts/evaluation_300m. All ten jobs passed
+on attempt-1; suite.json complete=true was written at 06:24:20 UTC. Evaluator
+source hashes matched the original verified evaluation run.
+
+Direct SSH/SCP intermittently failed during banner exchange after evaluation.
+Reconnected through the authenticated RunPod SSH gateway and independently
+reverified all ten receipts, selected model hashes, sources and tokenizer.
+Copied the supervisor log/launch record into the evidence directory and built
+a transfer manifest covering all 45 files. Transferred an 18MB compressed archive
+through the gateway, checked its size/hash, safely extracted into the new
+artifacts/downloaded_evaluation_300m directory and verified all 45 files locally.
+No benchmarks were repeated to repair the transfer connection.
+
+Evaluation archive: 17,986,399 bytes; SHA-256
+93e9080611f057c66f5555af26899f63a4640c56b2c6b7928b8f218dc7490c9c.
+Transfer manifest SHA-256:
+db5817e25b3b7b5a364b02858bd43131139956e3bc574079b60da62af2a070f0.
+Uncompressed manifest-listed evidence totals 129,497,109 bytes.
+
+The local operational builder artifacts/build_300m_summary.py verified exact
+file inventories, source/model/tokenizer identities, complete sample counts,
+unchanged WikiText identity, parent-checkpoint chains, fresh-corpus identity,
+training target/update totals and each current-stage full-validation record.
+It wrote docs/results/evaluation_summary_300m.json only after all checks passed.
+Syntax compilation, independent comparison arithmetic and diff checks passed.
+Training/evaluator behavior was unchanged; no new model-code tests were needed.
+
+Results, baseline/HelixDepth: HellaSwag 26.49/26.49%, ARC-Easy 37.79/36.99%,
+PIQA 56.64/57.07%, WinoGrande 47.51/49.25%; WikiText perplexity 86.511235/85.418300.
+HelixDepth's perplexity improved 25.30% versus its 100M checkpoint, but its
+advantage over baseline narrowed to 1.26%. Reasoning changes are mixed;
+normalized PIQA slightly favors baseline. One seed and no paired analysis
+limit inference. Further training is not justified as a guaranteed competitive
+improvement; recommended next priority is reviewing and preparing this evidence
+for the demo. No 400M stage was prepared or started.
+
+Modified README.md, docs/evaluation.md, docs/continuation.md and this record.
+Created docs/results/baseline_continuation_300m.json,
+docs/results/helixdepth_continuation_300m.json,
+docs/results/continuation_300m_backup_verified.json and
+docs/results/evaluation_summary_300m.json. Local ignored operational/evidence
+outputs are the report builder, 300M backup directory, evaluation download
+directory and downloaded evaluation archive. Remote new artifacts are the
+backup manifest/receipt, model staging symlinks, evaluation directory/log/launch
+record and evidence archive. Manifest files enumerate every transferred file.
+
+Final process/GPU checks found no training/evaluation process and no CUDA
+compute process. The Pod remains running and billable for the owner's review.
+No files deleted, model publication, commit, push or Pod stop performed.
+
+## 2026-10-02 — Bounded generation demo and local replay
+
+User supplied a RunPod dashboard showing $2.66 at $0.751/hour, with an estimated
+3h32m remaining. Inspected model loading and evaluation: the harness adapter
+supports likelihood scoring but deliberately has no generation implementation.
+Added standalone scripts/generate_demo.py, without changing model, training or
+benchmark code. Consulted Context7 for PyTorch inference and CUDA timing APIs.
+
+The script loads our checkpoint/tokenizer, generates bounded next-token
+continuations in inference mode, records all outputs/settings/timing and hashes,
+and preserves existing output files. Defaults selected before viewing outputs:
+three fixed prompts, 96 new tokens, temperature 0.8, top-k 40 and seeds 2026–2028.
+Special tokens other than EOS are masked. No KV cache or repetition penalty.
+
+Focused CPU checks passed: seeded repetition, unchanged parameter tensors, no
+gradients, model-mode restoration, context-limit rejection and greedy EOS stop.
+Uploaded the script through the authenticated SSH gateway and verified its hash.
+Checked both saved model hashes against the 300M backup receipt and confirmed
+the GPU was idle. Launched sequential baseline/HelixDepth generation with a
+five-minute external timeout. Both finished and saved all six examples; no
+training occurred. All examples reached the 96-token limit.
+
+Downloaded both reports and the shared log through the gateway. The first
+download parser did not find its transfer marker and wrote nothing; retry with
+an explicit marker newline succeeded. All three files passed byte-size/SHA-256
+verification; model, tokenizer, source and shared prompt/decoding identities
+matched. The local raw directory is artifacts/downloaded_demo_300m, including
+the transfer manifest. Its manifest SHA-256 is
+2887509699278998b073e326e54aa1a6567c52d90370a99ec1f76558c1cbd828.
+
+Saved all outputs in docs/results/generation_demo_300m.json. They reveal
+repetition, incoherence and factual errors; these limitations are documented,
+and no favorable-example selection or text editing was applied. Verified local
+CPU inference using the actual HelixDepth backup: four greedy tokens, " they
+are not able", approximately 0.18 seconds excluding loading/warmup. That local
+smoke output is artifacts/demo_cpu_smoke_helixdepth.json.
+
+Created scripts/generate_demo.py, docs/generation-demo.md and
+docs/results/generation_demo_300m.json. Updated README.md and this record.
+Remote new files are the generation script and artifacts/demo_300m outputs.
+No model files were changed. Pod stopping was requested separately because the
+owner previously asked to retain its GPU allocation. The owner explicitly
+answered "Keep the Pod running for now" after verification, so it remains
+running and billable. Final process inspection found no generation or training
+worker. Closed only this task's SSH connection; the Pod was not stopped.
+
+## 2026-10-02 — Final evidence publication and recording preparation
+
+Owner authorized publishing the completed work and synchronizing Notion before
+recording the video. Confirmed remote main was still d034ccd and Notion's latest
+continuation note was 07:40 Manila. Preserved all existing implementation.
+
+The full current repository suite passed: 55 tests in 60.69 seconds. Re-ran the
+300M evidence verifier: all ten evaluations and both model backups passed.
+Updated the existing visual source and its SVG/HTML/PNG outputs from the old
+200M snapshot to final 300M results; inspected the rendered diagram. Added
+docs/video-guide.md with narration, screen choices, limitations and a bounded
+local CPU recording command; added docs/model-card.md with provenance, metrics,
+custom checkpoint loading and limitations. README links these materials.
+
+Ran the exact short CPU generation example: 32 greedy tokens, 2.184 seconds
+(excluding loading/warmup). The output was repetitive and factually incorrect;
+it is retained in ignored artifacts/demo_video_publication_check.json. This
+is verification of local inference, not evidence of reliable reasoning.
+
+User identified buildwithjansen as the Hugging Face account and completed the
+interactive device login. Release packaging/publication and Notion synchronization
+are recorded in a following entry after verification. No license grant invented.
+No additional training or Pod shutdown occurred; the owner's keep-running
+instruction remains active.

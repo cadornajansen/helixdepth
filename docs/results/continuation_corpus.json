@@ -1,0 +1,109 @@
+{
+  "format": "little-endian-int32",
+  "vocab_size": 16384,
+  "eos_id": 2,
+  "tokenizer_sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+  "source_revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "source_settings": {
+    "dataset_id": "HuggingFaceFW/fineweb-edu",
+    "dataset_config": "sample-10BT",
+    "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+    "source_split": "train",
+    "text_column": "text",
+    "seed": 2026,
+    "candidate_documents": 20000,
+    "max_documents": 10000,
+    "max_text_bytes": 33554432,
+    "min_document_bytes": 200,
+    "max_document_bytes": 20000,
+    "validation_per_mille": 50,
+    "excluded_domains": [
+      "wikipedia.org",
+      "huggingface.co",
+      "github.com"
+    ],
+    "vocab_size": 16384,
+    "min_pair_frequency": 2,
+    "special_tokens": [
+      "<pad>",
+      "<bos>",
+      "<eos>",
+      "<unk>"
+    ],
+    "output_dir": "artifacts/cp2"
+  },
+  "parent_manifest_sha256": "84a8c807eae3d387c4d09247d83b1870e0ffffb9eb64ec6e55432af6011c2757",
+  "source_start_index": 124371,
+  "audit_index_note": "source_index is relative to source_start_index",
+  "splits": {
+    "train": {
+      "tokens": 99999958,
+      "text_tokens": 99884881,
+      "documents": 115077,
+      "text_bytes": 433293763,
+      "stop_reason": "first_document_exceeding_capacity",
+      "bin_sha256": "4a953687b4d4f1ca2d6a94d4a957edc089c17050d4a7b139f3fcaf461ccc6faa",
+      "index_sha256": "685f49c2ac325d1fc8afea57b5a198e262d6eec2ebd36ac4f8a75a709f53919c"
+    },
+    "validation": {
+      "tokens": 385550,
+      "text_tokens": 385107,
+      "documents": 443,
+      "text_bytes": 1693522,
+      "stop_reason": "source_bound_or_exhaustion",
+      "bin_sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+      "index_sha256": "bc9caf9901df91774d85f7b896729201c24b8d604f842b7323c78203fa59fc40"
+    }
+  },
+  "selection_counts": {
+    "scanned_documents": 125326,
+    "eligible_train": 115078,
+    "excluded_length": 3082,
+    "reserved_validation": 6239,
+    "excluded_domain": 864,
+    "duplicate_or_existing": 63
+  },
+  "fresh_verified": true,
+  "limitations": [
+    "Exact canonical hashes and source IDs excluded across old corpus and audit; near duplicates not exhaustively excluded",
+    "Domain exclusions do not prove benchmark decontamination"
+  ],
+  "files": {
+    "source_card.md": {
+      "sha256": "a0cc8998a20499432b28b6575f3046b714938eb8e11b8d59a1d25ddf3716061e",
+      "bytes": 26354
+    },
+    "validation.jsonl": {
+      "sha256": "177ce3ee31527b1fb9ca7f3b735264cad386329764bcd5a837d5947a9310c509",
+      "bytes": 1929281
+    },
+    "validation.index.jsonl": {
+      "sha256": "bc9caf9901df91774d85f7b896729201c24b8d604f842b7323c78203fa59fc40",
+      "bytes": 51818
+    },
+    "validation.bin": {
+      "sha256": "f9b852858604564ef70895796677886d9a24d174dd34082319d0cddb5706a9b8",
+      "bytes": 1542200
+    },
+    "tokenizer.json": {
+      "sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2",
+      "bytes": 1137470
+    },
+    "train.bin": {
+      "sha256": "4a953687b4d4f1ca2d6a94d4a957edc089c17050d4a7b139f3fcaf461ccc6faa",
+      "bytes": 399999832
+    },
+    "train.index.jsonl": {
+      "sha256": "685f49c2ac325d1fc8afea57b5a198e262d6eec2ebd36ac4f8a75a709f53919c",
+      "bytes": 13713643
+    },
+    "train.jsonl": {
+      "sha256": "071663dd0b2a75f054f232597f9a59e85004fe1c3018116250430c4769c2e62c",
+      "bytes": 494023985
+    },
+    "selection_audit.jsonl": {
+      "sha256": "1e29fde539ddba1c860ec78a1231dc29463b1c444e58bd31407e5862c0271936",
+      "bytes": 56442289
+    }
+  }
+}

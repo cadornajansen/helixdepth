@@ -1,0 +1,53 @@
+{
+  "stage": "baseline additional training",
+  "stop_reason": "schedule_complete",
+  "step": 12207,
+  "schedule_steps": 12207,
+  "stage_targets": 99999744,
+  "cumulative_targets": 199991296,
+  "selected": {
+    "stage_step": 12207,
+    "full_validation_loss": 3.822446083484463
+  },
+  "wall_seconds_this_process": 1337.6960878372192,
+  "peak_allocated_bytes": 5918689792,
+  "files": {
+    "model.pt": {
+      "sha256": "4ffdbae369121278cb1896b10a8d61025f3350174af0162a1f09a3cbdf9fa29b",
+      "bytes": 163895163
+    },
+    "latest.pt": {
+      "sha256": "b2508719b9328ed74c2e1f78800e84a3da3a4cd00618475d9ca61e5a0be0b41c",
+      "bytes": 492713403
+    },
+    "best.pt": {
+      "sha256": "4ffdbae369121278cb1896b10a8d61025f3350174af0162a1f09a3cbdf9fa29b",
+      "bytes": 163895163
+    }
+  },
+  "identity": {
+    "parent_sha256": "e83d131659ef3d991ac848139f21e33d4b93c2dc0554014e59e6066f1e5f80a4",
+    "parent_targets": 99991552,
+    "data_manifest_sha256": "f56183df0555c6d3281d867bd2368c42dcd3a30a7c2f286e0918906064a294a0",
+    "config": {
+      "context": 512,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.1,
+      "gradient_clip": 1.0,
+      "warmup_steps": 244,
+      "schedule_steps": 12207,
+      "minimum_lr_fraction": 0.1,
+      "seed": 2026,
+      "deterministic": true,
+      "cpu_threads": 1,
+      "validation_batches": 64,
+      "checkpoint_every": 500,
+      "precision": "float32"
+    },
+    "deadline_unix": 1790918104.0,
+    "optimizer": "New AdamW state; weights-only stage initialization",
+    "runner_sha256": "5646d53bacb752f2dbb42882354e97876cd9ddbe546806b1bd68019324af1f58",
+    "training_sha256": "b2f894dd8f5ee3c20de237508d094206242e8f8a2cce3bc000098dc2c8a98d13"
+  }
+}
