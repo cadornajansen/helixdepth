@@ -1324,3 +1324,42 @@ interactive device login. Release packaging/publication and Notion synchronizati
 are recorded in a following entry after verification. No license grant invented.
 No additional training or Pod shutdown occurred; the owner's keep-running
 instruction remains active.
+
+## 2026-10-02 — Public release and Notion synchronization verified
+
+Published source/evidence/recording material to public GitHub main in commit
+317fab809e90fc84687e43b3daddf2030abcf73f. The first push failed on DNS resolution;
+a retry succeeded and git ls-remote confirmed the exact commit. Anonymous GitHub
+API access confirmed the repository is public. No force push used.
+
+Created public Hugging Face repository:
+https://huggingface.co/buildwithjansen/helixdepth-300m
+Verified revision: 4e993957f50ebdbc84c88e9578e474edd21497fa.
+Uploaded both selected model.pt exports, frozen tokenizer, two configs, model
+card, evaluation and generation summaries, and a release manifest pinning the
+source commit. Both model sizes and LFS SHA-256 identities match the verified
+backups. All six smaller payload files were downloaded anonymously and verified
+byte-for-byte by size/SHA-256. No training dataset or optimizer state uploaded.
+A transient DNS failure during commit submission was retried by the Hub client;
+the final public revision and contents were checked independently.
+
+New public receipt: docs/results/model_release_verified.json. Updated README
+with the verified release link/revision and docs/publication.md with the complete
+file inventory. New ignored operational files: artifacts/publish_hf_300m.py,
+artifacts/hf_release_300m/ (eight payload files and release_manifest.json), and
+artifacts/demo_video_publication_check.json. No existing checkpoints changed or
+files deleted. The release has no selected model license; public visibility is
+not represented as an open-source license grant.
+
+Used the Notion knowledge-capture skill to synchronize the existing project
+page, preserving its historical records. Reconciled checkpoint checkboxes,
+replaced stale current metrics/status, linked public code/models/results and
+recording notes, and recorded the final release. Fetched the page again to
+confirm the final release revision and current recording status. Notion:
+https://app.notion.com/p/3ecd08af02fb81f29b20de9cd85bfc83
+
+Current handoff: CP6 complete, CP7 evidence sufficient for the bounded claims
+in the video (full inference-memory/local-device profiling remains unclaimed),
+CP8 source/model publication complete. Owner still needs to record/upload the
+video and finish/verify Devpost submission. The Pod remains running as requested.
+No additional training was started.

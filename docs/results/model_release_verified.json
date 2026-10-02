@@ -1,0 +1,44 @@
+{
+  "verified_at_utc": "2026-10-02T07:49:28.850364+00:00",
+  "repo_id": "buildwithjansen/helixdepth-300m",
+  "url": "https://huggingface.co/buildwithjansen/helixdepth-300m",
+  "revision": "4e993957f50ebdbc84c88e9578e474edd21497fa",
+  "source_commit": "317fab809e90fc84687e43b3daddf2030abcf73f",
+  "public_anonymous_metadata_verified": true,
+  "model_sizes_and_lfs_sha256_verified": true,
+  "files": {
+    "helixdepth/model.pt": {
+      "bytes": 164770270,
+      "sha256": "e4d83c74ab6bd88c8026dd8533ccd0f6ab9ad5eafe620c92d19b55e747e99518"
+    },
+    "baseline/model.pt": {
+      "bytes": 163895163,
+      "sha256": "bb529fe34a30cf11ef89717724513765cc246d2cf58f6dc6511b0b6ce7401d47"
+    },
+    "tokenizer.json": {
+      "bytes": 1137470,
+      "sha256": "a98dbd3bb95de3ea9823b963e09c9069b25f2cf56bb1c5bb4f60a23cb7542bb2"
+    },
+    "README.md": {
+      "bytes": 6241,
+      "sha256": "50bd9c59653a530b83fbf949331fa90fd644b0417286be45d44347e2c187cc5a"
+    },
+    "configs/helixdepth.yaml": {
+      "bytes": 198,
+      "sha256": "53c5427f117b6d788a59b7340799d5e80baeb342d90b12c9469c0d421bb3b936"
+    },
+    "configs/baseline.yaml": {
+      "bytes": 195,
+      "sha256": "267b13841dfe3b83a4e9b25584d2108b5c584bf29467120f08764a5bf302fdfa"
+    },
+    "evaluation_summary_300m.json": {
+      "bytes": 31720,
+      "sha256": "71d27416a8b89f30d4cdb69df458f4212b7a299338f5364729529804dac0f9ca"
+    },
+    "generation_demo_300m.json": {
+      "bytes": 22983,
+      "sha256": "51eee81591312778d2a5654fcb4fefe40224746881a60473103169c2a837f0e6"
+    }
+  },
+  "all_small_release_files_anonymous_download_sha256_verified": true
+}

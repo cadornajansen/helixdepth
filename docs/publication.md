@@ -49,7 +49,7 @@ download archives and virtual environments are excluded from Git. No files delet
 | `tests/test_continuation.py` | Training/evaluation checks |
 | `tests/test_evaluation_runner.py` | Training/evaluation checks |
 | `docs/publication.md` | This complete publication inventory and checks |
-| `docs/results/model_release_verified.json` | Public model release identity and integrity receipt, once published |
+| `docs/results/model_release_verified.json` | Public model release identity and integrity receipt |
 
 ## Verification
 

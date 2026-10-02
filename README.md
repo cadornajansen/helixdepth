@@ -99,6 +99,14 @@ For recording, use the [three-minute video guide](docs/video-guide.md) and
 The [model card](docs/model-card.md) explains the custom checkpoint format,
 training provenance, reproduction commands and intended use.
 
+**Public model release:** [buildwithjansen/helixdepth-300m](https://huggingface.co/buildwithjansen/helixdepth-300m)
+contains both final model exports, the shared tokenizer, configurations and
+results. Revision `4e993957f50ebdbc84c88e9578e474edd21497fa` was checked without
+authentication: model sizes/SHA-256 match our backups, and all six supporting
+files passed download/hash checks. See the [release receipt](docs/results/model_release_verified.json).
+These are custom PyTorch checkpoints; use this repository's loader, not
+Transformers AutoModel. The release manifest pins source commit `317fab8`.
+
 ### Original matched 100M comparison (historical)
 
 Each model trained from random initialization on 99,991,552 next-token targets
